@@ -96,4 +96,4 @@ en tu computadora, no puede aparecer. Pasos:
    · Poné el link de la web en la bio de Instagram y en el perfil de WhatsApp Business.
    Cada lugar que enlaza a la web ayuda a que Google la encuentre y la valore.
 
-Para comprobar que ya está en Google, buscá:  site:rashoprints.netlify.app
+Para comprobar que ya está en Google, buscá:  site:rashoprints.com
