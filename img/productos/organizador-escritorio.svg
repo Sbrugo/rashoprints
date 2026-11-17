@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img">
+<defs>
+<radialGradient id="fondo" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="#f4f4f1"/><stop offset="1" stop-color="#ecebe7"/></radialGradient>
+<radialGradient id="sombra"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<pattern id="capasL" width="8" height="3.2" patternUnits="userSpaceOnUse" patternTransform="skewY(30)"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+<pattern id="capasR" width="8" height="3.2" patternUnits="userSpaceOnUse" patternTransform="skewY(-30)"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+<pattern id="capasH" width="8" height="3.2" patternUnits="userSpaceOnUse"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="600" height="600" fill="url(#fondo)"/>
+<g transform="translate(-110.0 -176.1) scale(1.158)">
+<ellipse cx="354.1" cy="494.2" rx="263.5" ry="94.9" fill="url(#sombra)"/>
+<g><polygon points="170.1,455.0 408.3,592.5 408.3,575.0 170.1,437.5" fill="#353537" /><polygon points="538.2,517.5 408.3,592.5 408.3,575.0 538.2,500.0" fill="#29292b" /><polygon points="300.0,362.5 538.2,500.0 408.3,575.0 170.1,437.5" fill="#515153" /><polygon points="170.1,455.0 408.3,592.5 408.3,575.0 170.1,437.5" fill="url(#capasL)" /><polygon points="538.2,517.5 408.3,592.5 408.3,575.0 538.2,500.0" fill="url(#capasR)" /></g><g><polygon points="170.1,437.5 245.9,481.2 245.9,331.2 170.1,287.5" fill="#353537" /><polygon points="375.8,406.2 245.9,481.2 245.9,331.2 375.8,256.2" fill="#29292b" /><polygon points="300.0,212.5 375.8,256.2 245.9,331.2 170.1,287.5" fill="#515153" /><polygon points="170.1,437.5 245.9,481.2 245.9,331.2 170.1,287.5" fill="url(#capasL)" /><polygon points="375.8,406.2 245.9,481.2 245.9,331.2 375.8,256.2" fill="url(#capasR)" /></g><g><polygon points="251.3,484.4 327.1,528.1 327.1,428.1 251.3,384.4" fill="#353537" /><polygon points="457.0,453.1 327.1,528.1 327.1,428.1 457.0,353.1" fill="#29292b" /><polygon points="381.2,309.4 457.0,353.1 327.1,428.1 251.3,384.4" fill="#515153" /><polygon points="251.3,484.4 327.1,528.1 327.1,428.1 251.3,384.4" fill="url(#capasL)" /><polygon points="457.0,453.1 327.1,528.1 327.1,428.1 457.0,353.1" fill="url(#capasR)" /></g><g><polygon points="332.5,531.2 408.3,575.0 408.3,520.0 332.5,476.2" fill="#353537" /><polygon points="538.2,500.0 408.3,575.0 408.3,520.0 538.2,445.0" fill="#29292b" /><polygon points="462.4,401.2 538.2,445.0 408.3,520.0 332.5,476.2" fill="#515153" /><polygon points="332.5,531.2 408.3,575.0 408.3,520.0 332.5,476.2" fill="url(#capasL)" /><polygon points="538.2,500.0 408.3,575.0 408.3,520.0 538.2,445.0" fill="url(#capasR)" /></g>
+</g>
+</svg>

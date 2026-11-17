@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img">
+<defs>
+<radialGradient id="fondo" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="#f4f4f1"/><stop offset="1" stop-color="#ecebe7"/></radialGradient>
+<radialGradient id="sombra"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<pattern id="capasL" width="8" height="3.2" patternUnits="userSpaceOnUse" patternTransform="skewY(30)"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+<pattern id="capasR" width="8" height="3.2" patternUnits="userSpaceOnUse" patternTransform="skewY(-30)"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+<pattern id="capasH" width="8" height="3.2" patternUnits="userSpaceOnUse"><rect width="8" height="1" fill="#000" fill-opacity=".07"/></pattern>
+</defs>
+<rect width="600" height="600" fill="url(#fondo)"/>
+<g transform="translate(-191.2 -109.8) scale(1.262)">
+<ellipse cx="370.4" cy="534.9" rx="147.2" ry="53.0" fill="url(#sombra)"/>
+<g><polygon points="345.5,428.8 453.7,491.2 453.7,216.2 345.5,153.8" fill="#487044" /><polygon points="473.2,480.0 453.7,491.2 453.7,216.2 473.2,205.0" fill="#385735" /><polygon points="365.0,142.5 473.2,205.0 453.7,216.2 345.5,153.8" fill="#64895f" /><polygon points="345.5,428.8 453.7,491.2 453.7,216.2 345.5,153.8" fill="url(#capasL)" /><polygon points="473.2,480.0 453.7,491.2 453.7,216.2 473.2,205.0" fill="url(#capasR)" /></g><g><polygon points="307.6,394.4 340.1,413.1 340.1,385.6 307.6,366.9" fill="#487044" /><polygon points="415.8,369.4 340.1,413.1 340.1,385.6 415.8,341.9" fill="#385735" /><polygon points="383.4,323.1 415.8,341.9 340.1,385.6 307.6,366.9" fill="#64895f" /><polygon points="307.6,394.4 340.1,413.1 340.1,385.6 307.6,366.9" fill="url(#capasL)" /><polygon points="415.8,369.4 340.1,413.1 340.1,385.6 415.8,341.9" fill="url(#capasR)" /></g><g><polygon points="305.4,395.6 337.9,414.4 337.9,339.4 305.4,320.6" fill="#487044" /><polygon points="353.0,405.6 337.9,414.4 337.9,339.4 353.0,330.6" fill="#385735" /><polygon points="320.6,311.9 353.0,330.6 337.9,339.4 305.4,320.6" fill="#64895f" /><polygon points="305.4,395.6 337.9,414.4 337.9,339.4 305.4,320.6" fill="url(#capasL)" /><polygon points="353.0,405.6 337.9,414.4 337.9,339.4 353.0,330.6" fill="url(#capasR)" /></g>
+</g>
+</svg>

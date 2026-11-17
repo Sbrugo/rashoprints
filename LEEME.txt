@@ -1,0 +1,99 @@
+RASHO PRINTS — PÁGINA WEB (versión 1)
+=====================================
+
+ARCHIVOS
+--------
+index.html                  La página (todas las secciones).
+css/estilos.css             Diseño: colores, tipografías, tamaños.
+js/productos.js             ★ CONFIGURACIÓN: colores y datos de contacto.
+js/app.js                   Funcionamiento: WhatsApp y formulario de pedido personalizado. (No hace falta tocarlo.)
+img/sitio/                 Imagen de portada, imagen de "Quiénes somos" e ícono de la pestaña.
+
+
+CÓMO ABRIR LA WEB EN TU COMPUTADORA
+-----------------------------------
+1. Descomprimí el archivo rasho-prints.zip (clic derecho > "Extraer todo" en Windows,
+   o doble clic en Mac).
+2. Entrá a la carpeta "rasho-prints".
+3. Hacé doble clic en "index.html". Se abre en tu navegador (Chrome, Edge, Firefox o Safari).
+No hace falta instalar nada ni tener internet. Con internet se ve con la tipografía
+definitiva (Inter Tight); sin internet usa una parecida.
+
+
+CÓMO CAMBIAR COLORES Y DATOS DE CONTACTO
+---------------------------------------
+Abrí js/productos.js con un editor de texto (Bloc de notas sirve; mejor si es
+Visual Studio Code, gratuito). Todo está comentado en español.
+
+· Agregar un color nuevo: sumalo en la lista "colores" (nombre + código de color).
+  Aparece en el selector "Color" del formulario de pedido personalizado.
+· Video / Portada y "Quiénes somos": en img/sitio/ tenés el video animado impresora-3d.webm y las ilustraciones.
+· Trayectoria en "Quiénes somos": en index.html buscá "[Año de inicio]" y completá
+  los tres datos (o borrá ese bloque).
+Guardá el archivo y recargá la página (F5) para ver los cambios.
+
+
+CÓMO PROBAR EL PEDIDO PERSONALIZADO
+-----------------------------------
+1. En "Impresión personalizada" elegí "Una idea" y subí una imagen (foto, boceto o referencia).
+2. Completá la descripción, medidas, cantidad, material y color, y tocá
+   "Enviar mi idea por WhatsApp".
+   Se abre WhatsApp (web o app) con el pedido escrito, dirigido al +54 9 11 6425-4177.
+   NO se envía solo: hay que tocar enviar. Para probar sin molestar, podés no enviarlo.
+3. Archivo 3D: elegí "Un archivo 3D" y subí un .stl. Se abre WhatsApp con los datos.
+   La imagen o el archivo se adjunta a mano en el chat (la página lo explica).
+Si al probar desde tu misma cuenta de WhatsApp aparece tu propio número, es normal:
+el mensaje va dirigido al número del negocio.
+
+
+LIMITACIONES DE ESTA VERSIÓN
+----------------------------
+· No hay pago online: el pago y la entrega se coordinan por WhatsApp.
+· La imagen o el archivo STL no viaja solo: el cliente debe adjuntarlo en el chat de WhatsApp.
+  Enviarlo automáticamente requiere un servicio de recepción de archivos (por ejemplo,
+  un formulario con almacenamiento como Formspree, Google Forms con carga de archivos o
+  un servidor propio). Eso es una mejora opcional, con costo y configuración aparte.
+· La web no guarda los pedidos: cada pedido existe solo como mensaje de WhatsApp.
+· Stock y plazos no se controlan desde la página.
+· El perfil de Instagram (instagram.com/rashoprints) no pudo verificarse: confirmá que
+  sea el correcto; se cambia en js/productos.js (instagramUrl).
+· La página está solo en tu computadora: no está publicada en internet. Publicarla
+  (por ejemplo en Netlify o GitHub Pages, que tienen planes gratuitos) es un paso aparte.
+
+
+CÓMO HACER QUE LA WEB APAREZCA EN GOOGLE
+----------------------------------------
+Google solo encuentra páginas publicadas en internet. Mientras la web esté solo
+en tu computadora, no puede aparecer. Pasos:
+
+1. PUBLICAR (gratis, con Netlify)
+   · Entrá a https://app.netlify.com/drop y creá una cuenta.
+   · Arrastrá la carpeta completa de la web (la que tiene index.html) a la página.
+   · En "Site configuration" > "Change site name" poné: rashoprints
+     Tu web queda en https://rashoprints.netlify.app/
+   · Si ese nombre ya está tomado o usás un dominio propio (ej. rashoprints.com.ar),
+     reemplazá "https://rashoprints.netlify.app/" por tu dirección en:
+     index.html, robots.txt y sitemap.xml. Después volvé a subir la carpeta.
+
+2. AVISARLE A GOOGLE (Google Search Console, gratis)
+   · Entrá a https://search.google.com/search-console con la cuenta de Gmail del negocio.
+   · "Agregar propiedad" > "Prefijo de URL" > pegá la dirección de la web.
+   · Verificación: elegí "Etiqueta HTML", copiá la línea <meta name="google-site-verification" ...>
+     y pegala en index.html, justo debajo de <meta name="robots" ...>. Volvé a subir la carpeta
+     y tocá "Verificar".
+   · En el menú "Sitemaps" escribí: sitemap.xml  y tocá "Enviar".
+   · En "Inspección de URLs" pegá la dirección de la web y tocá "Solicitar indexación".
+   Google suele tardar entre unos días y 2 semanas en mostrarla.
+
+3. PERFIL DE EMPRESA EN GOOGLE (muy recomendado para búsquedas locales)
+   · Entrá a https://business.google.com y creá el perfil "Rasho Prints",
+     categoría "Servicio de impresión 3D", zona de servicio Buenos Aires (podés ocultar
+     la dirección exacta). Agregá la web, WhatsApp, fotos de trabajos y pedí reseñas.
+   Esto es lo que más ayuda a aparecer cuando alguien busca "impresión 3D Núñez" o
+   "impresión 3D cerca de mí".
+
+4. LINKS DESDE OTROS LUGARES
+   · Poné el link de la web en la bio de Instagram y en el perfil de WhatsApp Business.
+   Cada lugar que enlaza a la web ayuda a que Google la encuentre y la valore.
+
+Para comprobar que ya está en Google, buscá:  site:rashoprints.netlify.app

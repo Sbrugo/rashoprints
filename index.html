@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rasho Prints | Impresión 3D en Buenos Aires · Llaveros personalizados</title>
+  <meta name="description" content="Impresión 3D personalizada en Buenos Aires: llaveros con tu logo, piezas a medida y prototipos en PLA y PETG. Subí tu idea o archivo STL y cotizá por WhatsApp. Retiro en Núñez o envío por moto.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0b">
+
+  <!-- DIRECCIÓN DE LA WEB: si la publicás en otra dirección, reemplazá
+       "https://rashoprints.netlify.app/" en este archivo, en robots.txt y en sitemap.xml -->
+  <link rel="canonical" href="https://rashoprints.netlify.app/">
+
+  <link rel="icon" href="img/sitio/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/sitio/apple-touch-icon.png">
+
+  <!-- Vista previa al compartir el link (WhatsApp, Instagram, Facebook, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Rasho Prints">
+  <meta property="og:title" content="Rasho Prints | Impresión 3D en Buenos Aires">
+  <meta property="og:description" content="Llaveros personalizados, piezas a medida y prototipos en PLA y PETG. Cotizá por WhatsApp.">
+  <meta property="og:url" content="https://rashoprints.netlify.app/">
+  <meta property="og:image" content="https://rashoprints.netlify.app/img/sitio/compartir.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rasho Prints — Impresión 3D en Buenos Aires">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Datos estructurados: le dicen a Google qué es el negocio, dónde está y cómo contactarlo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://rashoprints.netlify.app/#negocio",
+        "name": "Rasho Prints",
+        "description": "Impresión 3D y fabricación personalizada en Buenos Aires: llaveros personalizados, piezas a medida y prototipos en PLA y PETG.",
+        "url": "https://rashoprints.netlify.app/",
+        "image": "https://rashoprints.netlify.app/img/sitio/compartir.png",
+        "logo": "https://rashoprints.netlify.app/img/sitio/apple-touch-icon.png",
+        "telephone": "+5491164254177",
+        "email": "rashoprints@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Núñez, Ciudad Autónoma de Buenos Aires",
+          "addressRegion": "CABA",
+          "addressCountry": "AR"
+        },
+        "areaServed": { "@type": "City", "name": "Buenos Aires" },
+        "sameAs": ["https://www.instagram.com/rashoprints/"],
+        "knowsAbout": ["Impresión 3D", "Llaveros personalizados", "Prototipado", "PLA", "PETG", "Archivos STL"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rashoprints.netlify.app/#sitio",
+        "url": "https://rashoprints.netlify.app/",
+        "name": "Rasho Prints",
+        "inLanguage": "es-AR",
+        "publisher": { "@id": "https://rashoprints.netlify.app/#negocio" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Qué materiales utilizan?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con PLA y PETG. La elección depende de las características de la pieza y de su uso previsto." } },
+          { "@type": "Question", "name": "¿Cómo puedo pedir una impresión personalizada?", "acceptedAnswer": { "@type": "Answer", "text": "Desde el formulario de pedido personalizado podés subir una imagen, foto o boceto de tu idea, o tu archivo STL si ya lo tenés. Contanos qué necesitás y te enviamos la cotización." } },
+          { "@type": "Question", "name": "¿Cómo recibo mi pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Ofrecemos retiro presencial en Núñez, coordinando previamente, o envío mediante motomensajería." } },
+          { "@type": "Question", "name": "¿Cuánto demora una impresión?", "acceptedAnswer": { "@type": "Answer", "text": "El plazo depende del tamaño, la complejidad y la cantidad de piezas. Confirmamos el tiempo estimado al evaluar el pedido." } },
+          { "@type": "Question", "name": "¿Cómo puedo pagar?", "acceptedAnswer": { "@type": "Answer", "text": "El método de pago se coordina por WhatsApp antes de confirmar el pedido." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ 1. BARRA DE NAVEGACIÓN ============ -->
+<header class="barra" id="barra">
+  <div class="contenedor barra__fila">
+    <a href="#inicio" class="logo" aria-label="Rasho Prints, ir al inicio">
+      <span class="logo__marca" aria-hidden="true"><i></i><i></i><i></i></span>
+      RASHO<span class="logo__fino">PRINTS</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#llaveros">Llaveros</a>
+      <a href="#personalizada">Impresión personalizada</a>
+      <a href="#materiales">Materiales</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#preguntas">Preguntas frecuentes</a>
+      <a href="#contacto" class="menu__solo-movil">Contacto</a>
+    </nav>
+
+    <div class="barra__acciones">
+      <button class="boton-icono menu-boton" id="botonMenu" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progreso" id="progreso" aria-hidden="true"></div>
+</header>
+
+<main id="principal">
+
+<!-- ============ 2. PORTADA ============ -->
+<section class="hero hero--fondo-video" id="inicio" aria-labelledby="hero-titulo">
+  <div class="hero__video-fondo" aria-hidden="true">
+    <video autoplay loop muted playsinline preload="auto" poster="img/sitio/portada.svg">
+      <source src="img/sitio/impresora-3d.webm" type="video/webm">
+    </video>
+    <div class="hero__velo"></div>
+  </div>
+  <div class="contenedor hero__contenido">
+    <div class="hero__texto">
+      <p class="etiqueta"><span class="punto"></span> Impresión 3D · Buenos Aires</p>
+      <h1 id="hero-titulo">Diseñamos ideas.<br><span class="tenue">Las hacemos <em class="resalte">realidad.</em></span></h1>
+      <p class="hero__bajada">Impresión 3D y fabricación personalizada en Buenos Aires. Diseño, tecnología y precisión para transformar ideas en objetos reales.</p>
+      <div class="hero__botones">
+        <a href="#personalizada" class="boton boton--lleno" data-ir-modo="idea">Subí la imagen de tu idea</a>
+        <a href="#personalizada" class="boton boton--borde" data-ir-modo="stl">Cotizar mi archivo 3D</a>
+      </div>
+      <dl class="hero__datos">
+        <div><dt>Materiales</dt><dd>PLA · PETG</dd></div>
+        <div><dt>Pedidos</dt><dd>Por WhatsApp</dd></div>
+        <div><dt>Entrega</dt><dd>Retiro en Núñez o moto</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LLAVEROS PERSONALIZADOS ============ -->
+<section class="seccion seccion--oscura llaveros" id="llaveros" aria-labelledby="llaveros-titulo">
+  <div class="contenedor">
+    <div class="llaveros__principal">
+      <div class="llaveros__texto">
+        <p class="seccion__numero mono">01 — Llaveros personalizados</p>
+        <h2 id="llaveros-titulo">Tu marca, en el bolsillo de <em class="resalte">tus clientes.</em></h2>
+        <p class="seccion__bajada">Diseñamos e imprimimos en 3D llaveros con tu logo, el nombre de tu emprendimiento o el diseño que imagines. Un objeto chico que trabaja todos los días para tu marca.</p>
+        <ul class="llaveros__usos" aria-label="Ideas de uso">
+          <li>Logo de tu marca</li>
+          <li>Nombres e iniciales</li>
+          <li>Merch para eventos</li>
+          <li>Regalos empresariales</li>
+          <li>Souvenirs</li>
+          <li>Egresados y equipos</li>
+        </ul>
+        <div class="llaveros__cta">
+          <a class="boton boton--acento" href="https://wa.me/5491164254177" data-wa-mensaje="Hola Rasho Prints! Me interesan los llaveros personalizados para mi marca / emprendimiento. Les cuento mi idea:" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
+            Quiero mis llaveros personalizados
+          </a>
+          <p class="llaveros__nota">Contanos tu idea por WhatsApp y te respondemos con una propuesta y la cotización.</p>
+        </div>
+      </div>
+
+      <figure class="llaveros__imagen">
+        <svg viewBox="0 0 560 560" role="img" aria-label="Ilustración de tres llaveros impresos en 3D con la palabra RASHO, en negro, blanco y azul">
+          <defs>
+            <pattern id="llPuntos" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="14" cy="14" r="2" fill="rgba(0,0,0,.13)"/></pattern>
+            <pattern id="llCapas" width="8" height="4" patternUnits="userSpaceOnUse">
+              <rect y="3" width="8" height=".8" fill="rgba(0,0,0,.16)"/><rect width="8" height=".8" fill="rgba(255,255,255,.07)"/>
+            </pattern>
+            <g id="llForma"><rect x="-22" y="70" width="44" height="40" rx="12"/><rect x="-105" y="96" width="210" height="96" rx="22"/></g>
+          </defs>
+          <rect class="llaveros__panel" width="560" height="560"/>
+          <rect width="560" height="560" fill="url(#llPuntos)"/>
+
+          <!-- Llavero negro -->
+          <g class="llavero" style="transform-origin: 155px 60px; animation-duration: 4.2s; animation-delay: -1s">
+            <g transform="translate(155 52) rotate(-5)">
+              <circle class="llavero__aro" cy="24" r="20"/>
+              <use href="#llForma" y="8" fill="#000"/>
+              <use href="#llForma" fill="#1c1c1e"/>
+              <use href="#llForma" fill="url(#llCapas)"/>
+              <circle cy="82" r="6.5" class="llavero__agujero"/>
+              <ellipse class="llavero__aro llavero__aro--chico" cy="60" rx="7" ry="20"/>
+              <text class="llavero__texto" y="152" fill="#000">RASHO</text>
+              <text class="llavero__texto" y="150" fill="#f4f4f2">RASHO</text>
+              <text class="llavero__sub" y="174" fill="#ff5a1f">PRINTS</text>
+              <circle class="llavero__clavo" cy="8" r="6"/>
+            </g>
+          </g>
+
+          <!-- Llavero blanco -->
+          <g class="llavero" style="transform-origin: 405px 120px; animation-duration: 5s; animation-delay: -2.4s">
+            <g transform="translate(405 112) rotate(4)">
+              <circle class="llavero__aro" cy="24" r="20"/>
+              <use href="#llForma" y="8" fill="#c9c9c3"/>
+              <use href="#llForma" fill="#f7f7f5"/>
+              <use href="#llForma" fill="url(#llCapas)"/>
+              <circle cy="82" r="6.5" class="llavero__agujero"/>
+              <ellipse class="llavero__aro llavero__aro--chico" cy="60" rx="7" ry="20"/>
+              <text class="llavero__texto" y="152" fill="rgba(0,0,0,.18)">RASHO</text>
+              <text class="llavero__texto" y="150" fill="#ff5a1f">RASHO</text>
+              <text class="llavero__sub" y="174" fill="#3d3d3d">PRINTS</text>
+              <circle class="llavero__clavo" cy="8" r="6"/>
+            </g>
+          </g>
+
+          <!-- Llavero azul -->
+          <g class="llavero" style="transform-origin: 250px 310px; animation-duration: 3.6s; animation-delay: -.6s">
+            <g transform="translate(250 302) rotate(-2)">
+              <circle class="llavero__aro" cy="24" r="20"/>
+              <use href="#llForma" y="8" fill="#1d3f66"/>
+              <use href="#llForma" fill="#2c5d93"/>
+              <use href="#llForma" fill="url(#llCapas)"/>
+              <circle cy="82" r="6.5" class="llavero__agujero"/>
+              <ellipse class="llavero__aro llavero__aro--chico" cy="60" rx="7" ry="20"/>
+              <text class="llavero__texto" y="152" fill="#1d3f66">RASHO</text>
+              <text class="llavero__texto" y="150" fill="#ffffff">RASHO</text>
+              <text class="llavero__sub" y="174" fill="#bcd0e6">PRINTS</text>
+              <circle class="llavero__clavo" cy="8" r="6"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="mono">Imagen ilustrativa</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="llaveros__subtitulo">¿Por qué es una gran oportunidad para tu marca?</h3>
+    <ol class="beneficios">
+      <li class="beneficio">
+        <span class="mono">01</span>
+        <h4>Publicidad que se usa todos los días</h4>
+        <p>Un llavero acompaña a tu cliente cada vez que sale de su casa. Tu marca se ve en la mano, en la mochila y sobre la mesa, sin pagar anuncios.</p>
+      </li>
+      <li class="beneficio">
+        <span class="mono">02</span>
+        <h4>Bajo costo, gran recuerdo</h4>
+        <p>Es un objeto económico de producir que la gente guarda y usa. Dura mucho más que un folleto o una tarjeta.</p>
+      </li>
+      <li class="beneficio">
+        <span class="mono">03</span>
+        <h4>Un detalle que fideliza</h4>
+        <p>Sumalo a cada compra, al packaging o como regalo de bienvenida. Un gesto así se recuerda y hace que vuelvan a elegirte.</p>
+      </li>
+      <li class="beneficio">
+        <span class="mono">04</span>
+        <h4>Hecho a la medida de tu marca</h4>
+        <p>Tu logo, tus colores y la forma que quieras, en PLA o PETG. Te asesoramos en el diseño para que se vea bien y dure.</p>
+      </li>
+    </ol>
+
+    <div class="llaveros__banda">
+      <p><strong>¿Tenés una marca o un emprendimiento?</strong> Llevala a las llaves de tus clientes.</p>
+      <a class="boton" href="https://wa.me/5491164254177" data-wa-mensaje="Hola Rasho Prints! Tengo una marca / emprendimiento y quiero hacer llaveros personalizados. Les cuento mi idea:" target="_blank" rel="noopener">Contanos tu idea por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. CÓMO FUNCIONA ============ -->
+<section class="seccion seccion--clara" id="como-comprar" aria-labelledby="como-titulo">
+  <div class="contenedor">
+    <div class="seccion__cabecera">
+      <p class="seccion__numero mono">02 — Cómo pedir</p>
+      <h2 id="como-titulo">Simple, de <em class="resalte">principio a fin.</em></h2>
+    </div>
+    <ol class="pasos">
+      <li class="paso">
+        <span class="paso__num mono">01</span>
+        <h3>Mostranos tu idea</h3>
+        <p>Subí una imagen, foto o boceto, o tu archivo 3D si ya lo tenés.</p>
+      </li>
+      <li class="paso">
+        <span class="paso__num mono">02</span>
+        <h3>Completá los detalles</h3>
+        <p>Contanos medidas, cantidad, material y color.</p>
+      </li>
+      <li class="paso">
+        <span class="paso__num mono">03</span>
+        <h3>Envialo por WhatsApp</h3>
+        <p>Se abre un chat con tu pedido ya escrito. Adjuntás la imagen y lo enviás.</p>
+      </li>
+      <li class="paso">
+        <span class="paso__num mono">04</span>
+        <h3>Cotizamos y coordinamos</h3>
+        <p>Te respondemos con la cotización, la forma de pago y la entrega.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 5. IMPRESIÓN PERSONALIZADA (STL) ============ -->
+<section class="seccion seccion--oscura" id="personalizada" aria-labelledby="stl-titulo">
+  <div class="contenedor stl">
+    <div class="stl__intro">
+      <p class="seccion__numero mono">03 — Impresión personalizada</p>
+      <h2 id="stl-titulo">¿Tenés un modelo 3D? <em class="resalte">Nosotros lo imprimimos.</em></h2>
+      <p class="seccion__bajada">Enviá tu archivo y contanos qué necesitás. Analizamos tu modelo para evaluar materiales, dimensiones, tiempo de impresión y costo de fabricación.</p>
+      <ul class="stl__lista">
+        <li>¿No tenés archivo 3D? Mandanos una foto o boceto de tu idea y la diseñamos.</li>
+        <li>Revisamos cada archivo de forma personal.</li>
+        <li>Te enviamos la cotización por WhatsApp.</li>
+        <li>Tu archivo no se sube a ningún servidor desde esta página.</li>
+      </ul>
+    </div>
+
+    <form class="formulario" id="formSTL" data-modo="stl" novalidate>
+      <fieldset class="modo-envio">
+        <legend class="campo__etiqueta">¿Qué tenés para mostrarnos?</legend>
+        <label class="modo-envio__op">
+          <input type="radio" name="modo" value="stl" checked>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
+            <strong>Un archivo 3D</strong>
+            <small>STL, OBJ o 3MF</small>
+          </span>
+        </label>
+        <label class="modo-envio__op">
+          <input type="radio" name="modo" value="idea">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
+            <strong>Una idea</strong>
+            <small>Foto, boceto o imagen</small>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="campo" data-solo="stl">
+        <span class="campo__etiqueta" id="stl-archivo-etq">Subí tu archivo STL</span>
+        <label class="soltar" id="zonaSoltar" for="archivoSTL">
+          <input type="file" id="archivoSTL" name="archivo" accept=".stl,.obj,.3mf,.step,.stp,model/*,application/*" aria-describedby="stl-ayuda" aria-labelledby="stl-archivo-etq">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+          <span><strong>Elegí tu archivo STL</strong> o arrastralo acá</span>
+          <span class="soltar__ayuda" id="stl-ayuda">Al cargarlo te redirigirá a WhatsApp con tu archivo preparado</span>
+        </label>
+        <div class="archivo-elegido" id="archivoElegido" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/></svg>
+          <div class="archivo-elegido__datos">
+            <span class="archivo-elegido__nombre" id="archivoNombre"></span>
+            <span class="archivo-elegido__peso mono" id="archivoPeso"></span>
+          </div>
+          <button type="button" class="enlace-boton" id="quitarArchivo">Cambiar archivo</button>
+        </div>
+        <p class="campo__error" id="stl-error-archivo" role="alert"></p>
+      </div>
+
+      <div class="campo" data-solo="idea" hidden>
+        <span class="campo__etiqueta" id="idea-archivo-etq">Subí una foto o imagen de tu idea</span>
+        <label class="soltar" id="zonaIdea" for="archivoIdea">
+          <input type="file" id="archivoIdea" name="imagen" accept="image/*,.png,.jpg,.jpeg,.webp,.heic" aria-describedby="idea-ayuda" aria-labelledby="idea-archivo-etq">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+          <span><strong>Elegí una imagen</strong> o arrastrala acá</span>
+          <span class="soltar__ayuda" id="idea-ayuda">PNG, JPG o WEBP. Puede ser una foto, un boceto a mano o una referencia.</span>
+        </label>
+        <div class="archivo-elegido imagen-elegida" id="imagenElegida" hidden>
+          <img id="imagenVista" src="" alt="Vista previa de la imagen elegida" width="64" height="64">
+          <div class="archivo-elegido__datos">
+            <span class="archivo-elegido__nombre" id="imagenNombre"></span>
+            <span class="archivo-elegido__peso mono" id="imagenPeso"></span>
+          </div>
+          <button type="button" class="enlace-boton" id="quitarImagen">Cambiar imagen</button>
+        </div>
+        <p class="campo__error" id="idea-error-imagen" role="alert"></p>
+      </div>
+
+      <div class="campo" data-solo="idea" hidden>
+        <label class="campo__etiqueta" for="ideaDescripcion">Contanos tu idea</label>
+        <textarea id="ideaDescripcion" name="idea" rows="3" maxlength="1200" placeholder="¿Qué te gustaría fabricar? ¿Para qué se va a usar? ¿Tiene que encastrar con algo, soportar peso o estar al aire libre?"></textarea>
+      </div>
+
+      <div class="fila-2" data-solo="idea" hidden>
+        <div class="campo">
+          <label class="campo__etiqueta" for="ideaMedidas">Medidas aproximadas <span class="opcional">(opcional)</span></label>
+          <input type="text" id="ideaMedidas" name="ideaMedidas" maxlength="120" placeholder="Ej: 15 × 8 × 5 cm">
+        </div>
+        <div class="campo">
+          <label class="campo__etiqueta" for="ideaCantidad">Cantidad de piezas</label>
+          <input type="number" id="ideaCantidad" name="ideaCantidad" min="1" max="999" value="1" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="campo" data-solo="idea" hidden>
+        <label class="campo__etiqueta" for="ideaUso">Uso de la pieza</label>
+        <select id="ideaUso" name="ideaUso">
+          <option value="Decorativo">Decorativo</option>
+          <option value="Funcional / repuesto">Funcional / repuesto</option>
+          <option value="Regalo o souvenir">Regalo o souvenir</option>
+          <option value="Prototipo o maqueta">Prototipo o maqueta</option>
+          <option value="Otro (lo detallo en WhatsApp)">Otro (lo detallo en WhatsApp)</option>
+        </select>
+      </div>
+
+      <div class="fila-2">
+        <div class="campo">
+          <label class="campo__etiqueta" for="stlNombre">Nombre <span class="opcional">(opcional)</span></label>
+          <input type="text" id="stlNombre" name="nombre" autocomplete="name" maxlength="80">
+        </div>
+        <div class="campo">
+          <label class="campo__etiqueta" for="stlEmail">Correo electrónico <span class="opcional">(opcional)</span></label>
+          <input type="email" id="stlEmail" name="email" autocomplete="email" maxlength="120">
+        </div>
+      </div>
+
+      <div class="fila-2">
+        <div class="campo">
+          <label class="campo__etiqueta" for="stlMaterial">Material</label>
+          <select id="stlMaterial" name="material">
+            <option value="PLA">PLA</option>
+            <option value="PETG">PETG</option>
+            <option value="No sé, necesito asesoramiento">No sé, necesito asesoramiento</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label class="campo__etiqueta" for="stlColor">Color</label>
+          <select id="stlColor" name="color"></select>
+        </div>
+      </div>
+
+      <div class="campo" data-solo="stl">
+        <label class="campo__etiqueta" for="stlMedidas">Dimensiones o cantidad <span class="opcional">(opcional)</span></label>
+        <input type="text" id="stlMedidas" name="medidas" maxlength="160" placeholder="Ej: 2 unidades, de unos 10 cm de alto">
+      </div>
+
+      <div class="campo" data-solo="stl">
+        <label class="campo__etiqueta" for="stlDescripcion">Contanos tu proyecto <span class="opcional">(opcional)</span></label>
+        <textarea id="stlDescripcion" name="descripcion" rows="3" maxlength="1200" placeholder="¿Para qué se va a usar la pieza? ¿Tiene que encastrar, soportar peso o estar al aire libre?"></textarea>
+      </div>
+
+      <p class="aviso-wa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+        <span data-solo="stl">Se abrirá WhatsApp con los datos de tu solicitud. Adjuntá también tu archivo STL en el chat para que podamos analizarlo.</span>
+        <span data-solo="idea" hidden>Se abrirá WhatsApp con tu idea y los datos que completaste. Adjuntá también la imagen en el chat para que podamos verla.</span>
+      </p>
+
+      <button type="submit" class="boton boton--claro boton--ancho" id="btnCompartirSTL">
+        <span data-solo="stl">Compartir STL por WhatsApp</span>
+        <span data-solo="idea" hidden>Enviar mi idea por WhatsApp</span>
+      </button>
+
+      <div class="resultado-stl" id="resultadoSTL" hidden tabindex="-1">
+        <h3>¡Listo! Te redirigimos a WhatsApp</h3>
+        <ol>
+          <li>En el chat de WhatsApp que se abrió, revisá el mensaje y envialo.</li>
+          <li data-solo="stl">Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Documento</strong>.</li>
+          <li data-solo="idea" hidden>Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Galería</strong> o <strong>Fotos</strong>.</li>
+          <li>Adjuntá <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span> <strong id="resultadoArchivo"></strong>.</li>
+        </ol>
+        <p class="resultado-stl__nota">Tu solicitud se recibe cuando enviás el mensaje y <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span>. Te respondemos con la cotización.</p>
+        <p><a href="#" id="reabrirWhatsSTL" target="_blank" rel="noopener">¿No se abrió WhatsApp? Tocá acá para abrirlo</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 6. MATERIALES ============ -->
+<section class="seccion seccion--clara" id="materiales" aria-labelledby="materiales-titulo">
+  <div class="contenedor">
+    <div class="seccion__cabecera">
+      <p class="seccion__numero mono">04 — Materiales</p>
+      <h2 id="materiales-titulo">El material correcto para <em class="resalte">cada pieza.</em></h2>
+      <p class="seccion__bajada">Trabajamos con dos materiales. Si no sabés cuál elegir, te asesoramos según el uso que le vas a dar.</p>
+    </div>
+
+    <div class="materiales">
+      <article class="material">
+        <div class="material__muestra material__muestra--pla" aria-hidden="true"></div>
+        <p class="mono material__codigo">PLA</p>
+        <h3>PLA — Versátil y preciso</h3>
+        <p>Un material muy usado en impresión 3D, con buena definición en los detalles y una amplia variedad de colores.</p>
+        <ul class="lista-check">
+          <li>Objetos decorativos</li>
+          <li>Organizadores</li>
+          <li>Prototipos</li>
+          <li>Accesorios de uso cotidiano</li>
+        </ul>
+      </article>
+      <article class="material">
+        <div class="material__muestra material__muestra--petg" aria-hidden="true"></div>
+        <p class="mono material__codigo">PETG</p>
+        <h3>PETG — Resistencia y funcionalidad</h3>
+        <p>Una alternativa para piezas que trabajan: ofrece mayor tenacidad que el PLA y se comporta mejor ante usos más exigentes.</p>
+        <ul class="lista-check">
+          <li>Piezas funcionales</li>
+          <li>Componentes que necesitan mayor tenacidad</li>
+          <li>Objetos con un uso más exigente que el decorativo</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="comparar" role="region" aria-labelledby="comparar-titulo" tabindex="0">
+      <h3 id="comparar-titulo" class="mono comparar__titulo">Comparación rápida</h3>
+      <table>
+        <thead>
+          <tr><th scope="col"><span class="sr-only">Característica</span></th><th scope="col">PLA</th><th scope="col">PETG</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Definición de detalles</th><td><span class="nivel" data-n="3"></span>Muy buena</td><td><span class="nivel" data-n="2"></span>Buena</td></tr>
+          <tr><th scope="row">Tenacidad</th><td><span class="nivel" data-n="1"></span>Menor</td><td><span class="nivel" data-n="3"></span>Mayor</td></tr>
+          <tr><th scope="row">Tolerancia al calor</th><td><span class="nivel" data-n="1"></span>Menor</td><td><span class="nivel" data-n="2"></span>Algo mayor que el PLA</td></tr>
+          <tr><th scope="row">Ideal para</th><td>Decoración, organizadores, prototipos</td><td>Piezas funcionales y de uso exigente</td></tr>
+        </tbody>
+      </table>
+      <p class="comparar__nota">Comparación orientativa. Las prestaciones finales dependen del diseño de la pieza y de sus condiciones de uso. Ningún material es indestructible: consultanos antes de usar una pieza con calor, cargas, exteriores o productos químicos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. QUIÉNES SOMOS ============ -->
+<section class="seccion seccion--gris" id="nosotros" aria-labelledby="nosotros-titulo">
+  <div class="contenedor nosotros">
+    <!-- ANIMACIÓN: de la idea al producto impreso en 3D (la controla js/app.js) -->
+    <figure class="nosotros__imagen animacion-idea" id="animacionIdea" data-fase="listo">
+      <svg viewBox="0 0 600 600" role="img" aria-label="Animación: una idea se convierte en un diseño, se imprime en 3D capa por capa y queda el producto terminado">
+        <defs>
+          <pattern id="aniPuntos" width="24" height="24" patternUnits="userSpaceOnUse"><circle class="ani__puntos" cx="2" cy="2" r="1.2"/></pattern>
+          <pattern id="aniCapas" width="10" height="6" patternUnits="userSpaceOnUse">
+            <rect class="ani__capas-base" width="10" height="6"/><rect class="ani__capas-linea" y="5" width="10" height="1"/>
+          </pattern>
+          <linearGradient id="aniVolumen" x1="0" x2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+            <stop offset="1" stop-color="#000" stop-opacity=".22"/>
+          </linearGradient>
+          <clipPath id="aniForma"><path d="M240 470C215 430 215 400 225 370C240 330 268 310 268 285L262 250H338L332 285C332 310 360 330 375 370C385 400 385 430 360 470Z"/></clipPath>
+        </defs>
+
+        <rect class="ani__fondo" width="600" height="600"/>
+        <rect width="600" height="600" fill="url(#aniPuntos)"/>
+
+        <!-- 1. Idea -->
+        <g class="ani__idea">
+          <circle class="ani__halo" cx="300" cy="235" r="95"/>
+          <g class="ani__rayos ani__trazo ani__acento">
+            <path d="M300 120v-22M300 350v22M185 235h-22M415 235h22M219 154l-15-15M381 154l15-15M219 316l-15 15M381 316l15 15"/>
+          </g>
+          <circle class="ani__trazo ani__vidrio" cx="300" cy="230" r="58"/>
+          <path class="ani__trazo ani__acento ani__filamento" d="M282 255l10-28 8 22 8-22 10 28"/>
+          <path class="ani__trazo" d="M280 282v24h40v-24M284 294h32"/>
+          <path class="ani__trazo" d="M290 306v10h20v-10"/>
+        </g>
+
+        <!-- 2. Diseño -->
+        <g class="ani__cotas">
+          <path class="ani__trazo ani__cota" d="M300 232V478M412 250V470M404 250h16M404 470h16M262 228h76M262 220v16M338 220v16"/>
+        </g>
+        <g class="ani__boceto">
+          <path class="ani__trazo" pathLength="1" d="M240 470C215 430 215 400 225 370C240 330 268 310 268 285L262 250H338L332 285C332 310 360 330 375 370C385 400 385 430 360 470Z"/>
+        </g>
+
+        <!-- 3. Impresora -->
+        <g class="ani__impresora">
+          <rect class="ani__estructura" x="122" y="100" width="12" height="390" rx="2"/>
+          <rect class="ani__estructura" x="466" y="100" width="12" height="390" rx="2"/>
+          <rect class="ani__estructura" x="122" y="100" width="356" height="12" rx="2"/>
+          <rect class="ani__cama" x="150" y="470" width="300" height="14" rx="2"/>
+          <rect class="ani__estructura" x="104" y="484" width="392" height="26" rx="4"/>
+          <rect class="ani__pantalla" x="124" y="491" width="44" height="12" rx="2"/>
+          <g id="aniRiel" transform="translate(0 150)">
+            <rect class="ani__riel" x="134" y="-42" width="332" height="8" rx="2"/>
+          </g>
+        </g>
+
+        <!-- 4. Pieza impresa (se revela capa por capa) -->
+        <g class="ani__pieza">
+          <g clip-path="url(#aniForma)">
+            <rect id="aniRelleno" x="200" y="248" width="200" height="222" fill="url(#aniCapas)"/>
+            <rect id="aniRellenoVol" x="200" y="248" width="200" height="222" fill="url(#aniVolumen)"/>
+            <rect id="aniCapa" class="ani__capa" x="200" y="242" width="200" height="6"/>
+          </g>
+        </g>
+
+        <g class="ani__impresora">
+          <g id="aniCabezal" transform="translate(180 150)">
+            <rect class="ani__bloque" x="-18" y="-34" width="36" height="24" rx="3"/>
+            <circle class="ani__ventilador" cx="0" cy="-22" r="6"/>
+            <path class="ani__boquilla" d="M-7 -10H7L2 0H-2Z"/>
+            <circle class="ani__punta" cx="0" cy="1" r="3"/>
+          </g>
+        </g>
+
+        <g class="ani__brillos">
+          <path d="M398 262l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>
+          <path d="M196 318l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/>
+          <path d="M392 392l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+        </g>
+      </svg>
+      <ol class="ani-pasos" aria-hidden="true">
+        <li data-paso="idea"><span class="mono">01</span> Idea</li>
+        <li data-paso="diseno"><span class="mono">02</span> Diseño</li>
+        <li data-paso="impresion"><span class="mono">03</span> Impresión 3D</li>
+        <li data-paso="listo"><span class="mono">04</span> Producto</li>
+      </ol>
+    </figure>
+    <div class="nosotros__texto">
+      <p class="seccion__numero mono">05 — Quiénes somos</p>
+      <h2 id="nosotros-titulo">Ideas que toman <em class="resalte">forma.</em></h2>
+      <p>En Rasho Prints combinamos diseño, tecnología y fabricación digital para transformar ideas en objetos reales.</p>
+      <p>Somos estudiantes de Diseño Industrial de la Universidad de Palermo, trabajando junto a PyMEs, estudiantes y empresas para desarrollar soluciones a medida.</p>
+      <p>Nos especializamos en materializar proyectos, desde prototipos y modelos conceptuales hasta piezas funcionales y productos personalizados. Acompañamos cada etapa del proceso, aportando una mirada de diseño, atención al detalle y compromiso con cada resultado.</p>
+      <p>Creemos que toda buena idea merece la oportunidad de convertirse en realidad. Por eso, trabajamos para ofrecer soluciones accesibles, precisas y adaptadas a las necesidades de cada cliente.</p>
+      <p><b>Tu idea, nuestro próximo proyecto.</b></p>
+
+      <!-- TRAYECTORIA: completá estos datos reales (o borrá este bloque si preferís no mostrarlos) -->
+      <dl class="trayectoria">
+        <div><dt>Desde</dt><dd class="completar">[2024]</dd></div>
+       
+       
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. PREGUNTAS FRECUENTES ============ -->
+<section class="seccion seccion--clara" id="preguntas" aria-labelledby="faq-titulo">
+  <div class="contenedor faq">
+    <div class="seccion__cabecera">
+      <p class="seccion__numero mono">06 — Preguntas frecuentes</p>
+      <h2 id="faq-titulo">Lo que más nos <em class="resalte">consultan.</em></h2>
+    </div>
+    <div class="faq__lista">
+      <details>
+        <summary>¿Qué materiales utilizan?</summary>
+        <p>Trabajamos con PLA y PETG. La elección depende de las características de la pieza y de su uso previsto.</p>
+      </details>
+      <details>
+        <summary>¿Cómo puedo pedir una impresión personalizada?</summary>
+        <p>Desde <a href="#personalizada">el formulario de pedido personalizado</a> podés subir una imagen, foto o boceto de tu idea, o tu archivo STL si ya lo tenés. Contanos qué necesitás y te enviamos la cotización.</p>
+      </details>
+      <details>
+        <summary>¿Cómo recibo mi pedido?</summary>
+        <p>Ofrecemos retiro presencial en Núñez, coordinando previamente, o envío mediante motomensajería.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta el envío?</summary>
+        <p>El costo de la motomensajería se coordina según la dirección de entrega y la disponibilidad del servicio. Te lo informamos antes de confirmar el pedido.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto demora una impresión?</summary>
+        <p>El plazo depende del tamaño, la complejidad y la cantidad de piezas. Confirmamos el tiempo estimado al evaluar el pedido.</p>
+      </details>
+      <details>
+        <summary>¿Puedo elegir el color?</summary>
+        <p>Sí, según las opciones disponibles para cada material.</p>
+      </details>
+      <details>
+        <summary>¿Cómo puedo pagar?</summary>
+        <p>El método de pago se coordina por WhatsApp antes de confirmar el pedido.</p>
+      </details>
+      <details>
+        <summary>¿Puedo enviar un archivo que no sea STL?</summary>
+        <p>El formulario acepta archivos STL. Si tenés otro formato, <a href="https://wa.me/5491164254177" data-link="whatsapp" target="_blank" rel="noopener">consultanos por WhatsApp</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CONTACTO ============ -->
+<section class="seccion seccion--clara" id="contacto" aria-labelledby="contacto-titulo">
+  <div class="contenedor">
+    <div class="seccion__cabecera">
+      <p class="seccion__numero mono">07 — Contacto</p>
+      <h2 id="contacto-titulo">Hablemos de tu <em class="resalte">próxima pieza.</em></h2>
+      <p class="seccion__bajada">Escribinos por el canal que te quede más cómodo.</p>
+    </div>
+    <div class="contactos">
+      <a class="contacto" href="https://wa.me/5491164254177" data-link="whatsapp" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Rasho Prints (se abre en una pestaña nueva)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
+        <span class="contacto__tipo mono">WhatsApp</span>
+        <span class="contacto__valor" data-text="whatsappVisible">+54 9 11 6425-4177</span>
+        <span class="contacto__flecha" aria-hidden="true">↗</span>
+      </a>
+      <a class="contacto" href="mailto:rashoprints@gmail.com" data-link="email" aria-label="Enviar un correo a Rasho Prints">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+        <span class="contacto__tipo mono">Correo</span>
+        <span class="contacto__valor" data-text="email">rashoprints@gmail.com</span>
+        <span class="contacto__flecha" aria-hidden="true">↗</span>
+      </a>
+      <a class="contacto" href="https://www.instagram.com/rashoprints/" data-link="instagram" target="_blank" rel="noopener" aria-label="Ver el Instagram de Rasho Prints (se abre en una pestaña nueva)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg>
+        <span class="contacto__tipo mono">Instagram</span>
+        <span class="contacto__valor">@<span data-text="instagramUsuario">rashoprints</span></span>
+        <span class="contacto__flecha" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 10. PIE DE PÁGINA ============ -->
+<footer class="pie">
+  <div class="contenedor">
+    <p class="pie__frase">Tu idea, <em class="resalte">hecha realidad.</em></p>
+    <div class="pie__grilla">
+      <a href="#inicio" class="logo logo--claro" aria-label="Rasho Prints, volver al inicio">
+        <span class="logo__marca" aria-hidden="true"><i></i><i></i><i></i></span>
+        RASHO<span class="logo__fino">PRINTS</span>
+      </a>
+      <nav aria-label="Secciones del sitio" class="pie__nav">
+        <a href="#llaveros">Llaveros personalizados</a>
+        <a href="#como-comprar">Cómo pedir</a>
+        <a href="#personalizada">Impresión personalizada</a>
+        <a href="#materiales">Materiales</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="pie__contacto">
+        <a href="mailto:rashoprints@gmail.com" data-link="email" data-text="email">rashoprints@gmail.com</a>
+        <a href="https://wa.me/5491164254177" data-link="whatsapp" target="_blank" rel="noopener">WhatsApp <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a>
+        <a href="https://www.instagram.com/rashoprints/" data-link="instagram" target="_blank" rel="noopener">Instagram @<span data-text="instagramUsuario">rashoprints</span></a>
+      </div>
+    </div>
+    <p class="pie__legal mono">© <span id="anio">2026</span> Rasho Prints. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/productos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
