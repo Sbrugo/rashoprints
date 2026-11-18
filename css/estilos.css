@@ -748,3 +748,7 @@ body::after {
   .comparar tbody th { width: 30%; }
   .comparar .nivel { display: flex; margin: 2px 0 6px; }
 }
+
+/* Botones de la portada: llegan al recuadro para subir, con un resaltado breve */
+.campo--subir, #formSTL { scroll-margin-top: calc(var(--barra-alto) + 20px); }
+.soltar--destacada { border-color: var(--acento) !important; box-shadow: 0 0 0 4px rgba(255, 90, 31, .22); transition: box-shadow .3s, border-color .3s; }

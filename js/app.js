@@ -550,9 +550,18 @@
 
     // Botones de la portada: llevan al formulario con el modo ya elegido
     $$('[data-ir-modo]').forEach(function (a) {
-      a.addEventListener('click', function () {
+      a.addEventListener('click', function (e) {
         var radio = $('input[name="modo"][value="' + a.getAttribute('data-ir-modo') + '"]', form);
         if (radio && !radio.checked) { radio.checked = true; cambiarModo(radio.value); }
+        // Lleva directo al recuadro para subir la imagen o el archivo (no al título de la sección)
+        var destino = $('.campo--subir[data-solo="' + modo + '"]', form);
+        if (destino) {
+          e.preventDefault();
+          destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var zonaDestino = $('.soltar', destino);
+          if (zonaDestino) zonaDestino.classList.add('soltar--destacada');
+          setTimeout(function () { if (zonaDestino) zonaDestino.classList.remove('soltar--destacada'); }, 1800);
+        }
       });
     });
 

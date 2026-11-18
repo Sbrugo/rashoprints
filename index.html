@@ -126,8 +126,8 @@
       <h1 id="hero-titulo">Diseñamos ideas.<br><span class="tenue">Las hacemos <em class="resalte">realidad.</em></span></h1>
       <p class="hero__bajada">Impresión 3D y fabricación personalizada en Buenos Aires. Diseño, tecnología y precisión para transformar ideas en objetos reales.</p>
       <div class="hero__botones">
-        <a href="#personalizada" class="boton boton--lleno" data-ir-modo="idea">Subí la imagen de tu idea</a>
-        <a href="#personalizada" class="boton boton--borde" data-ir-modo="stl">Cotizar mi archivo 3D</a>
+        <a href="#formSTL" class="boton boton--lleno" data-ir-modo="idea">Subí la imagen de tu idea</a>
+        <a href="#formSTL" class="boton boton--borde" data-ir-modo="stl">Cotizar mi archivo 3D</a>
       </div>
       <dl class="hero__datos">
         <div><dt>Materiales</dt><dd>PLA · PETG</dd></div>
@@ -326,7 +326,7 @@
         </label>
       </fieldset>
 
-      <div class="campo" data-solo="stl">
+      <div class="campo campo--subir" data-solo="stl">
         <span class="campo__etiqueta" id="stl-archivo-etq">Subí tu archivo STL</span>
         <label class="soltar" id="zonaSoltar" for="archivoSTL">
           <input type="file" id="archivoSTL" name="archivo" accept=".stl,.obj,.3mf,.step,.stp,model/*,application/*" aria-describedby="stl-ayuda" aria-labelledby="stl-archivo-etq">
@@ -346,7 +346,7 @@
         <p class="campo__error" id="stl-error-archivo" role="alert"></p>
       </div>
 
-      <div class="campo" data-solo="idea" hidden>
+      <div class="campo campo--subir" data-solo="idea" hidden>
         <span class="campo__etiqueta" id="idea-archivo-etq">Subí una foto o imagen de tu idea</span>
         <label class="soltar" id="zonaIdea" for="archivoIdea">
           <input type="file" id="archivoIdea" name="imagen" accept="image/*,.png,.jpg,.jpeg,.webp,.heic" aria-describedby="idea-ayuda" aria-labelledby="idea-archivo-etq">
