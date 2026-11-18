@@ -371,63 +371,72 @@
         <textarea id="ideaDescripcion" name="idea" rows="3" maxlength="1200" placeholder="¿Qué te gustaría fabricar? ¿Para qué se va a usar? ¿Tiene que encastrar con algo, soportar peso o estar al aire libre?"></textarea>
       </div>
 
-      <div class="fila-2" data-solo="idea" hidden>
-        <div class="campo">
-          <label class="campo__etiqueta" for="ideaMedidas">Medidas aproximadas <span class="opcional">(opcional)</span></label>
-          <input type="text" id="ideaMedidas" name="ideaMedidas" maxlength="120" placeholder="Ej: 15 × 8 × 5 cm">
+      <details class="mas-detalles" id="masDetalles">
+        <summary>
+          <span>Más detalles <span class="opcional">(opcional)</span></span>
+          <small data-solo="idea" hidden>Medidas, cantidad, uso, material, color y tus datos</small>
+          <small data-solo="stl">Material, color, medidas, aclaraciones y tus datos</small>
+        </summary>
+        <div class="mas-detalles__cuerpo">
+        <div class="fila-2" data-solo="idea" hidden>
+          <div class="campo">
+            <label class="campo__etiqueta" for="ideaMedidas">Medidas aproximadas <span class="opcional">(opcional)</span></label>
+            <input type="text" id="ideaMedidas" name="ideaMedidas" maxlength="120" placeholder="Ej: 15 × 8 × 5 cm">
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="ideaCantidad">Cantidad de piezas</label>
+            <input type="number" id="ideaCantidad" name="ideaCantidad" min="1" max="999" value="1" inputmode="numeric">
+          </div>
         </div>
-        <div class="campo">
-          <label class="campo__etiqueta" for="ideaCantidad">Cantidad de piezas</label>
-          <input type="number" id="ideaCantidad" name="ideaCantidad" min="1" max="999" value="1" inputmode="numeric">
-        </div>
-      </div>
 
-      <div class="campo" data-solo="idea" hidden>
-        <label class="campo__etiqueta" for="ideaUso">Uso de la pieza</label>
-        <select id="ideaUso" name="ideaUso">
-          <option value="Decorativo">Decorativo</option>
-          <option value="Funcional / repuesto">Funcional / repuesto</option>
-          <option value="Regalo o souvenir">Regalo o souvenir</option>
-          <option value="Prototipo o maqueta">Prototipo o maqueta</option>
-          <option value="Otro (lo detallo en WhatsApp)">Otro (lo detallo en WhatsApp)</option>
-        </select>
-      </div>
-
-      <div class="fila-2">
-        <div class="campo">
-          <label class="campo__etiqueta" for="stlNombre">Nombre <span class="opcional">(opcional)</span></label>
-          <input type="text" id="stlNombre" name="nombre" autocomplete="name" maxlength="80">
-        </div>
-        <div class="campo">
-          <label class="campo__etiqueta" for="stlEmail">Correo electrónico <span class="opcional">(opcional)</span></label>
-          <input type="email" id="stlEmail" name="email" autocomplete="email" maxlength="120">
-        </div>
-      </div>
-
-      <div class="fila-2">
-        <div class="campo">
-          <label class="campo__etiqueta" for="stlMaterial">Material</label>
-          <select id="stlMaterial" name="material">
-            <option value="PLA">PLA</option>
-            <option value="PETG">PETG</option>
-            <option value="No sé, necesito asesoramiento">No sé, necesito asesoramiento</option>
+        <div class="campo" data-solo="idea" hidden>
+          <label class="campo__etiqueta" for="ideaUso">Uso de la pieza</label>
+          <select id="ideaUso" name="ideaUso">
+            <option value="Decorativo">Decorativo</option>
+            <option value="Funcional / repuesto">Funcional / repuesto</option>
+            <option value="Regalo o souvenir">Regalo o souvenir</option>
+            <option value="Prototipo o maqueta">Prototipo o maqueta</option>
+            <option value="Otro (lo detallo en WhatsApp)">Otro (lo detallo en WhatsApp)</option>
           </select>
         </div>
-        <div class="campo">
-          <label class="campo__etiqueta" for="stlColor">Color</label>
-          <select id="stlColor" name="color"></select>
+
+        <div class="fila-2">
+          <div class="campo">
+            <label class="campo__etiqueta" for="stlNombre">Nombre <span class="opcional">(opcional)</span></label>
+            <input type="text" id="stlNombre" name="nombre" autocomplete="name" maxlength="80">
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="stlEmail">Correo electrónico <span class="opcional">(opcional)</span></label>
+            <input type="email" id="stlEmail" name="email" autocomplete="email" maxlength="120">
+          </div>
         </div>
-      </div>
 
-      <div class="campo" data-solo="stl">
-        <label class="campo__etiqueta" for="stlMedidas">Dimensiones o cantidad <span class="opcional">(opcional)</span></label>
-        <input type="text" id="stlMedidas" name="medidas" maxlength="160" placeholder="Ej: 2 unidades, de unos 10 cm de alto">
-      </div>
+        <div class="fila-2">
+          <div class="campo">
+            <label class="campo__etiqueta" for="stlMaterial">Material</label>
+            <select id="stlMaterial" name="material">
+              <option value="PLA">PLA</option>
+              <option value="PETG">PETG</option>
+              <option value="No sé, necesito asesoramiento">No sé, necesito asesoramiento</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="stlColor">Color</label>
+            <select id="stlColor" name="color"></select>
+          </div>
+        </div>
 
-      <div class="campo" data-solo="stl">
-        <label class="campo__etiqueta" for="stlDescripcion">Contanos tu proyecto <span class="opcional">(opcional)</span></label>
-        <textarea id="stlDescripcion" name="descripcion" rows="3" maxlength="1200" placeholder="¿Para qué se va a usar la pieza? ¿Tiene que encastrar, soportar peso o estar al aire libre?"></textarea>
-      </div>
+        <div class="campo" data-solo="stl">
+          <label class="campo__etiqueta" for="stlMedidas">Dimensiones o cantidad <span class="opcional">(opcional)</span></label>
+          <input type="text" id="stlMedidas" name="medidas" maxlength="160" placeholder="Ej: 2 unidades, de unos 10 cm de alto">
+        </div>
+
+        <div class="campo" data-solo="stl">
+          <label class="campo__etiqueta" for="stlDescripcion">Contanos tu proyecto <span class="opcional">(opcional)</span></label>
+          <textarea id="stlDescripcion" name="descripcion" rows="3" maxlength="1200" placeholder="¿Para qué se va a usar la pieza? ¿Tiene que encastrar, soportar peso o estar al aire libre?"></textarea>
+        </div>
+        </div>
+      </details>
 
       <p class="aviso-wa">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>

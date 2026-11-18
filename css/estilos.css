@@ -752,3 +752,13 @@ body::after {
 /* Botones de la portada: llegan al recuadro para subir, con un resaltado breve */
 .campo--subir, #formSTL { scroll-margin-top: calc(var(--barra-alto) + 20px); }
 .soltar--destacada { border-color: var(--acento) !important; box-shadow: 0 0 0 4px rgba(255, 90, 31, .22); transition: box-shadow .3s, border-color .3s; }
+
+/* Formulario corto: los campos opcionales quedan agrupados en "Más detalles" */
+.mas-detalles { border: 1px solid #3a3a3a; border-radius: var(--radio); background: #111; }
+.mas-detalles > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: center; padding: 14px 16px; font-size: 14px; font-weight: 500; }
+.mas-detalles > summary::-webkit-details-marker { display: none; }
+.mas-detalles > summary::after { content: "+"; grid-row: 1 / span 2; grid-column: 2; font-size: 22px; line-height: 1; color: var(--acento); }
+.mas-detalles[open] > summary::after { content: "−"; }
+.mas-detalles > summary small { grid-column: 1; color: #8a8a86; font-size: 12px; font-weight: 400; margin-top: 2px; }
+.mas-detalles > summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; border-radius: var(--radio); }
+.mas-detalles__cuerpo { display: grid; gap: 20px; padding: 4px 16px 18px; }
