@@ -293,8 +293,8 @@
       else {
         el.setAttribute('data-estado', s.estado);
         el.textContent = s.estado === 'subiendo' ? 'Subiendo… ' + s.porcentaje + '%'
-          : s.estado === 'lista' ? '✓ Subido. Ya podés enviarlo por WhatsApp.'
-          : 'No se pudo subir. Lo vas a poder adjuntar en el chat de WhatsApp.';
+          : s.estado === 'lista' ? (tipo === 'idea' ? '✓ Lista para enviar' : '✓ Listo para enviar')
+          : (tipo === 'idea' ? 'No se pudo subir: adjuntala en el chat' : 'No se pudo subir: adjuntalo en el chat');
       }
     }
     actualizarBoton();
