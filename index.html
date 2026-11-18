@@ -301,7 +301,7 @@
         <li>¿No tenés archivo 3D? Mandanos una foto o boceto de tu idea y la diseñamos.</li>
         <li>Revisamos cada archivo de forma personal.</li>
         <li>Te enviamos la cotización por WhatsApp.</li>
-        <li>Tu archivo no se sube a ningún servidor desde esta página.</li>
+        <li>Tu archivo se guarda de forma segura y se borra automáticamente a los 30 días.</li>
       </ul>
     </div>
 
@@ -332,13 +332,14 @@
           <input type="file" id="archivoSTL" name="archivo" accept=".stl,.obj,.3mf,.step,.stp,model/*,application/*" aria-describedby="stl-ayuda" aria-labelledby="stl-archivo-etq">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
           <span><strong>Elegí tu archivo STL</strong> o arrastralo acá</span>
-          <span class="soltar__ayuda" id="stl-ayuda">Al cargarlo te redirigirá a WhatsApp con tu archivo preparado</span>
+          <span class="soltar__ayuda" id="stl-ayuda">STL, OBJ, 3MF o STEP, hasta 25 MB. Se sube solo y va con tu mensaje de WhatsApp.</span>
         </label>
         <div class="archivo-elegido" id="archivoElegido" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/></svg>
           <div class="archivo-elegido__datos">
             <span class="archivo-elegido__nombre" id="archivoNombre"></span>
             <span class="archivo-elegido__peso mono" id="archivoPeso"></span>
+            <span class="archivo-elegido__estado" id="archivoEstado" aria-live="polite"></span>
           </div>
           <button type="button" class="enlace-boton" id="quitarArchivo">Cambiar archivo</button>
         </div>
@@ -351,13 +352,14 @@
           <input type="file" id="archivoIdea" name="imagen" accept="image/*,.png,.jpg,.jpeg,.webp,.heic" aria-describedby="idea-ayuda" aria-labelledby="idea-archivo-etq">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
           <span><strong>Elegí una imagen</strong> o arrastrala acá</span>
-          <span class="soltar__ayuda" id="idea-ayuda">PNG, JPG o WEBP. Puede ser una foto, un boceto a mano o una referencia.</span>
+          <span class="soltar__ayuda" id="idea-ayuda">PNG, JPG o WEBP, hasta 25 MB. Puede ser una foto, un boceto a mano o una referencia.</span>
         </label>
         <div class="archivo-elegido imagen-elegida" id="imagenElegida" hidden>
           <img id="imagenVista" src="" alt="Vista previa de la imagen elegida" width="64" height="64">
           <div class="archivo-elegido__datos">
             <span class="archivo-elegido__nombre" id="imagenNombre"></span>
             <span class="archivo-elegido__peso mono" id="imagenPeso"></span>
+            <span class="archivo-elegido__estado" id="imagenEstado" aria-live="polite"></span>
           </div>
           <button type="button" class="enlace-boton" id="quitarImagen">Cambiar imagen</button>
         </div>
@@ -429,8 +431,8 @@
 
       <p class="aviso-wa">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-        <span data-solo="stl">Se abrirá WhatsApp con los datos de tu solicitud. Adjuntá también tu archivo STL en el chat para que podamos analizarlo.</span>
-        <span data-solo="idea" hidden>Se abrirá WhatsApp con tu idea y los datos que completaste. Adjuntá también la imagen en el chat para que podamos verla.</span>
+        <span data-solo="stl">Se abrirá WhatsApp con los datos de tu solicitud y el link de tu archivo. Solo tenés que enviar el mensaje.</span>
+        <span data-solo="idea" hidden>Se abrirá WhatsApp con tu idea, los datos que completaste y el link de tu imagen. Solo tenés que enviar el mensaje.</span>
       </p>
 
       <button type="submit" class="boton boton--claro boton--ancho" id="btnCompartirSTL">
@@ -442,11 +444,12 @@
         <h3>¡Listo! Te redirigimos a WhatsApp</h3>
         <ol>
           <li>En el chat de WhatsApp que se abrió, revisá el mensaje y envialo.</li>
-          <li data-solo="stl">Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Documento</strong>.</li>
-          <li data-solo="idea" hidden>Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Galería</strong> o <strong>Fotos</strong>.</li>
-          <li>Adjuntá <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span> <strong id="resultadoArchivo"></strong>.</li>
+          <li class="paso-link" hidden>Listo: el mensaje ya incluye el link para que descarguemos <span data-solo="stl">tu archivo</span><span data-solo="idea" hidden>tu imagen</span>.</li>
+          <li class="paso-adjuntar" data-solo="stl">Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Documento</strong>.</li>
+          <li class="paso-adjuntar" data-solo="idea" hidden>Tocá el clip (📎) o el botón <strong>+</strong> y elegí <strong>Galería</strong> o <strong>Fotos</strong>.</li>
+          <li class="paso-adjuntar">Adjuntá <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span> <strong id="resultadoArchivo"></strong>.</li>
         </ol>
-        <p class="resultado-stl__nota">Tu solicitud se recibe cuando enviás el mensaje y <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span>. Te respondemos con la cotización.</p>
+        <p class="resultado-stl__nota paso-adjuntar">Tu solicitud se recibe cuando enviás el mensaje y <span data-solo="stl">el archivo</span><span data-solo="idea" hidden>la imagen</span>. Te respondemos con la cotización.</p>
         <p><a href="#" id="reabrirWhatsSTL" target="_blank" rel="noopener">¿No se abrió WhatsApp? Tocá acá para abrirlo</a></p>
       </div>
     </form>

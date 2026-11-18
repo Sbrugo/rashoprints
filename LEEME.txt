@@ -40,8 +40,11 @@ CÓMO PROBAR EL PEDIDO PERSONALIZADO
    "Enviar mi idea por WhatsApp".
    Se abre WhatsApp (web o app) con el pedido escrito, dirigido al +54 9 11 6425-4177.
    NO se envía solo: hay que tocar enviar. Para probar sin molestar, podés no enviarlo.
-3. Archivo 3D: elegí "Un archivo 3D" y subí un .stl. Se abre WhatsApp con los datos.
-   La imagen o el archivo se adjunta a mano en el chat (la página lo explica).
+3. Archivo 3D: elegí "Un archivo 3D" y subí un .stl. Esperá a que diga "✓ Subido",
+   completá los datos y tocá el botón. Se abre WhatsApp con los datos y un link
+   "⬇️ Descargar" para bajar el archivo.
+   Si la subida falla (o abrís la página desde tu computadora con doble clic), el
+   mensaje sale sin link y el cliente adjunta el archivo a mano en el chat.
 Si al probar desde tu misma cuenta de WhatsApp aparece tu propio número, es normal:
 el mensaje va dirigido al número del negocio.
 
@@ -49,10 +52,11 @@ el mensaje va dirigido al número del negocio.
 LIMITACIONES DE ESTA VERSIÓN
 ----------------------------
 · No hay pago online: el pago y la entrega se coordinan por WhatsApp.
-· La imagen o el archivo STL no viaja solo: el cliente debe adjuntarlo en el chat de WhatsApp.
-  Enviarlo automáticamente requiere un servicio de recepción de archivos (por ejemplo,
-  un formulario con almacenamiento como Formspree, Google Forms con carga de archivos o
-  un servidor propio). Eso es una mejora opcional, con costo y configuración aparte.
+· Los archivos de pedidos (STL, OBJ, 3MF, STEP e imágenes, hasta 25 MB) se guardan en
+  Vercel Blob y se BORRAN SOLOS a los 30 días: descargalos antes. El plazo se cambia
+  en api/limpiar.js (DIAS_GUARDADO). Plan gratis de Vercel: 1 GB de espacio.
+  Quien tenga el link puede descargar el archivo; los links son largos y no se pueden adivinar.
+  Para desactivar la subida: js/productos.js → subirArchivos: false.
 · La web no guarda los pedidos: cada pedido existe solo como mensaje de WhatsApp.
 · Stock y plazos no se controlan desde la página.
 · El perfil de Instagram (instagram.com/rashoprints) no pudo verificarse: confirmá que

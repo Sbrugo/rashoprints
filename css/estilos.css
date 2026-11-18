@@ -733,3 +733,9 @@ body::after {
 .seccion--clara .boton-icono:hover, .seccion--clara .boton--borde:hover { background: rgba(0, 0, 0, .05); }
 .seccion--clara .contacto { box-shadow: 0 1px 0 rgba(0, 0, 0, .03); }
 .seccion--clara .contacto:hover { box-shadow: 0 20px 50px -24px rgba(255, 90, 31, .6); }
+/* Estado de la subida del archivo de pedido */
+.archivo-elegido__estado { font-size: 12px; color: #8a8a86; }
+.archivo-elegido__estado:empty { display: none; }
+.archivo-elegido__estado[data-estado="lista"] { color: #7fd18b; }
+.archivo-elegido__estado[data-estado="error"] { color: #ff8a61; }
+.boton[disabled] { opacity: .55; cursor: progress; }

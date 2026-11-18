@@ -247,6 +247,97 @@
   var archivoActual = null;
   var modo = 'stl';
   var imagenActual = null, urlVista = null;
+  var botonEnviar = $('#btnCompartirSTL');
+
+  /* ---------- SUBIDA DEL ARCHIVO A VERCEL BLOB ----------
+     El archivo se sube apenas el cliente lo elige, y el mensaje de WhatsApp
+     lleva el link para descargarlo. Si la subida falla (o la página se abre
+     desde la computadora sin internet), se vuelve a lo de antes: el cliente
+     adjunta el archivo a mano en el chat. */
+  var CLIENTE_BLOB = 'https://esm.sh/@vercel/blob@2.8.2/client';
+  var TIPOS = {
+    stl: 'model/stl', obj: 'model/obj', '3mf': 'model/3mf', step: 'model/step', stp: 'model/step',
+    png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', gif: 'image/gif',
+    heic: 'image/heic', heif: 'image/heif'
+  };
+  var EXT_3D = ['stl', 'obj', '3mf', 'step', 'stp'];
+  var subidas = { stl: null, idea: null };
+  var promesaCliente = null;
+
+  function extension(nombre) {
+    var partes = String(nombre).toLowerCase().split('.');
+    return partes.length > 1 ? partes.pop() : '';
+  }
+  function nombreSeguro(nombre) {
+    var ext = extension(nombre);
+    var base = String(nombre).replace(/\.[^.]*$/, '')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-zA-Z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'archivo';
+    return base + '.' + ext;
+  }
+  function subidaActivada() {
+    return (cfg.stl.subirArchivos !== false) && /^https?:$/.test(location.protocol);
+  }
+  function maximoBytes() { return (cfg.stl.tamanoMaximoMB || 25) * 1024 * 1024; }
+
+  function mostrarEstado(tipo) {
+    var el = $(tipo === 'idea' ? '#imagenEstado' : '#archivoEstado');
+    var s = subidas[tipo];
+    if (el) {
+      if (!s) { el.textContent = ''; el.removeAttribute('data-estado'); }
+      else {
+        el.setAttribute('data-estado', s.estado);
+        el.textContent = s.estado === 'subiendo' ? 'Subiendo… ' + s.porcentaje + '%'
+          : s.estado === 'lista' ? '✓ Subido. Ya podés enviarlo por WhatsApp.'
+          : 'No se pudo subir. Lo vas a poder adjuntar en el chat de WhatsApp.';
+      }
+    }
+    actualizarBoton();
+  }
+  function actualizarBoton() {
+    if (!botonEnviar) return;
+    var s = subidas[modo];
+    var ocupado = !!(s && s.estado === 'subiendo');
+    botonEnviar.disabled = ocupado;
+    botonEnviar.setAttribute('aria-busy', ocupado ? 'true' : 'false');
+  }
+
+  function subirArchivo(tipo, archivo) {
+    if (!subidaActivada()) { subidas[tipo] = null; mostrarEstado(tipo); return; }
+    var s = { archivo: archivo, estado: 'subiendo', porcentaje: 0, url: '' };
+    subidas[tipo] = s;
+    mostrarEstado(tipo);
+    var ext = extension(archivo.name);
+    if (!promesaCliente) promesaCliente = import(CLIENTE_BLOB);
+    promesaCliente.then(function (cliente) {
+      return cliente.upload('pedidos/' + nombreSeguro(archivo.name), archivo, {
+        access: 'public',
+        handleUploadUrl: '/api/subir',
+        contentType: TIPOS[ext] || archivo.type,
+        multipart: archivo.size > 8 * 1024 * 1024,
+        onUploadProgress: function (p) {
+          if (subidas[tipo] !== s) return;
+          s.porcentaje = Math.min(99, Math.round(p.percentage || 0));
+          mostrarEstado(tipo);
+        }
+      });
+    }).then(function (blob) {
+      if (subidas[tipo] !== s) return; // el cliente cambió el archivo mientras subía
+      s.estado = 'lista';
+      s.url = blob.downloadUrl || blob.url;
+      mostrarEstado(tipo);
+    }).catch(function (err) {
+      if (subidas[tipo] !== s) return;
+      if (window.console) console.warn('No se pudo subir el archivo:', err);
+      promesaCliente = null; // permite reintentar con otro archivo
+      s.estado = 'error';
+      mostrarEstado(tipo);
+    });
+  }
+  function linkSubido(tipo) {
+    var s = subidas[tipo];
+    return s && s.estado === 'lista' ? s.url : '';
+  }
 
   /* Modo del formulario: "stl" (archivo 3D) o "idea" (foto o boceto) */
   function cambiarModo(nuevo) {
@@ -255,6 +346,7 @@
     $$('[data-solo]', form).forEach(function (el) { el.hidden = el.getAttribute('data-solo') !== nuevo; });
     $('#resultadoSTL').hidden = true;
     mostrarErrorImagen('');
+    actualizarBoton();
   }
 
   function mostrarErrorImagen(texto) {
@@ -283,11 +375,13 @@
     if (!imagen) return;
     var esImagen = /^image\//.test(imagen.type) || /\.(png|jpe?g|webp|gif|heic|heif)$/i.test(imagen.name);
     if (!esImagen) { mostrarErrorImagen('Ese archivo no es una imagen. Elegí un PNG, JPG o WEBP.'); return; }
+    if (imagen.size > maximoBytes()) { mostrarErrorImagen('La imagen pesa más de ' + (cfg.stl.tamanoMaximoMB || 25) + ' MB. Elegí una más liviana.'); return; }
     // A diferencia del STL, no redirige enseguida: primero se completan los datos de la idea
     imagenActual = imagen;
     mostrarErrorImagen('');
     mostrarImagen(imagen);
     $('#resultadoSTL').hidden = true;
+    subirArchivo('idea', imagen);
   }
 
   function mostrarArchivo(archivo) {
@@ -317,6 +411,7 @@
     ];
     if (archivoActual) {
       lineas.push('📁 Archivo: ' + archivoActual.name + ' (' + pesoArchivo(archivoActual.size) + ')');
+      if (linkSubido('stl')) lineas.push('⬇️ Descargar: ' + linkSubido('stl'));
     }
     if (mat) lineas.push('Material: ' + mat);
     if (color) lineas.push('Color: ' + color);
@@ -325,7 +420,7 @@
     if (email) lineas.push('Email: ' + email);
     if (desc) lineas.push('Aclaraciones: ' + desc);
     lineas.push('');
-    lineas.push('Te adjunto el archivo en este chat para que lo revisen.');
+    lineas.push(linkSubido('stl') ? 'Pueden descargar el archivo desde el link.' : 'Te adjunto el archivo en este chat para que lo revisen.');
     return lineas.join('\n');
   }
 
@@ -341,6 +436,7 @@
       ''
     ];
     if (imagenActual) lineas.push('🖼️ Imagen de referencia: ' + imagenActual.name + ' (' + pesoArchivo(imagenActual.size) + ')');
+    if (imagenActual && linkSubido('idea')) lineas.push('⬇️ Ver imagen: ' + linkSubido('idea'));
     if (idea) lineas.push('Idea: ' + idea);
     if (medidas) lineas.push('Medidas aproximadas: ' + medidas);
     lineas.push('Cantidad de piezas: ' + (cantidad > 0 ? cantidad : 1));
@@ -350,7 +446,7 @@
     if (nombre) lineas.push('Nombre: ' + nombre);
     if (email) lineas.push('Email: ' + email);
     lineas.push('');
-    lineas.push(imagenActual ? 'Te adjunto la imagen en este chat.' : '¿Me ayudan a diseñarla y cotizarla?');
+    lineas.push(imagenActual && !linkSubido('idea') ? 'Te adjunto la imagen en este chat.' : '¿Me ayudan a diseñarla y cotizarla?');
     return lineas.join('\n');
   }
 
@@ -362,6 +458,12 @@
     var resArchivo = $('#resultadoArchivo');
     var adjunto = esIdea ? imagenActual : archivoActual;
     if (resArchivo) resArchivo.textContent = adjunto ? adjunto.name : (esIdea ? 'de tu idea, si la tenés' : 'tu archivo');
+    var conLink = !!(adjunto && linkSubido(esIdea ? 'idea' : 'stl'));
+    $$('.paso-link', form).forEach(function (el) { el.hidden = !conLink; });
+    $$('.paso-adjuntar', form).forEach(function (el) {
+      var solo = el.getAttribute('data-solo');
+      el.hidden = conLink || (!!solo && solo !== modo) || (esIdea && !adjunto);
+    });
     var res = $('#resultadoSTL');
     if (res) {
       res.hidden = false;
@@ -370,12 +472,31 @@
     abrirWhatsApp(url);
   }
 
+  function errorArchivo(texto) {
+    var err = $('#stl-error-archivo');
+    if (!err) return;
+    err.textContent = texto;
+    err.closest('.campo').classList.toggle('invalido', !!texto);
+  }
+
   function elegirArchivo(archivo) {
     if (!archivo) return;
+    if (EXT_3D.indexOf(extension(archivo.name)) === -1) {
+      errorArchivo('Ese formato no está permitido. Elegí un archivo STL, OBJ, 3MF o STEP.');
+      entradaArchivo.value = '';
+      return;
+    }
+    if (archivo.size > maximoBytes()) {
+      errorArchivo('El archivo pesa más de ' + (cfg.stl.tamanoMaximoMB || 25) + ' MB. Escribinos por WhatsApp y lo resolvemos.');
+      entradaArchivo.value = '';
+      return;
+    }
+    errorArchivo('');
     archivoActual = archivo;
     mostrarArchivo(archivo);
-    // Al cargar el archivo, redirige inmediatamente a WhatsApp
-    redirigirAWhatsApp();
+    $('#resultadoSTL').hidden = true;
+    // Se sube enseguida; el cliente completa los datos y después envía por WhatsApp
+    subirArchivo('stl', archivo);
   }
 
   if (form) {
@@ -401,6 +522,8 @@
     $('#quitarArchivo').addEventListener('click', function () {
       archivoActual = null;
       entradaArchivo.value = '';
+      subidas.stl = null;
+      mostrarEstado('stl');
       mostrarArchivo(null);
       $('#resultadoSTL').hidden = true;
       entradaArchivo.focus();
@@ -446,6 +569,8 @@
     $('#quitarImagen').addEventListener('click', function () {
       imagenActual = null;
       entradaImagen.value = '';
+      subidas.idea = null;
+      mostrarEstado('idea');
       mostrarImagen(null);
       $('#resultadoSTL').hidden = true;
       entradaImagen.focus();

@@ -28,7 +28,10 @@ window.RASHO_CONFIG = {
 
   /* ---------- ARCHIVOS STL ---------- */
   stl: {
-    tamanoMaximoMB: 25
+    tamanoMaximoMB: 25,
+    // true: el archivo se sube y el mensaje de WhatsApp lleva el link para descargarlo.
+    // false: el cliente adjunta el archivo a mano en el chat (como antes).
+    subirArchivos: true
   },
 
   /* ---------- COLORES DISPONIBLES ----------
