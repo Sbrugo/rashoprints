@@ -329,7 +329,8 @@
     }).then(function (blob) {
       if (subidas[tipo] !== s) return; // el cliente cambió el archivo mientras subía
       s.estado = 'lista';
-      s.url = blob.downloadUrl || blob.url;
+      // El almacenamiento es privado: el link pasa por /api/archivo, que da permiso de descarga
+      s.url = location.origin + '/api/archivo?f=' + encodeURIComponent(blob.pathname);
       mostrarEstado(tipo);
     }).catch(function (err) {
       if (subidas[tipo] !== s) return;
