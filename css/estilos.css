@@ -739,3 +739,12 @@ body::after {
 .archivo-elegido__estado[data-estado="lista"] { color: #7fd18b; }
 .archivo-elegido__estado[data-estado="error"] { color: #ff8a61; }
 .boton[disabled] { opacity: .55; cursor: progress; }
+
+/* Tabla de comparación en celulares: entra completa sin desplazarse de costado */
+@media (max-width: 600px) {
+  .comparar { padding: 22px 16px; }
+  .comparar table { min-width: 0; table-layout: fixed; }
+  .comparar th, .comparar td { font-size: 13px; padding: 12px 8px 12px 0; vertical-align: top; }
+  .comparar tbody th { width: 30%; }
+  .comparar .nivel { display: flex; margin: 2px 0 6px; }
+}
