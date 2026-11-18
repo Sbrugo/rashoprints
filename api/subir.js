@@ -1,13 +1,18 @@
 /* =====================================================================
    RASHO PRINTS — AUTORIZA LA SUBIDA DE ARCHIVOS DE PEDIDOS
    El navegador del cliente le pide permiso a esta función y después sube
-   el archivo directo a Vercel Blob. Acá se controla qué se puede subir.
+   el archivo directo a Vercel Blob con un link firmado. Acá se controla
+   qué se puede subir. Usa la conexión del almacenamiento que Vercel
+   configura sola (BLOB_STORE_ID y BLOB_WEBHOOK_PUBLIC_KEY).
    (No hace falta tocar este archivo.)
    ===================================================================== */
-import { handleUpload } from '@vercel/blob/client';
+import { handleUploadPresigned } from '@vercel/blob/client';
+import { issueSignedToken } from '@vercel/blob';
 
 const TAMANO_MAXIMO_MB = 25;
 const EXTENSIONES = ['stl', 'obj', '3mf', 'step', 'stp', 'png', 'jpg', 'jpeg', 'webp', 'gif', 'heic', 'heif'];
+// pedidos/<código al azar>-<nombre>.<extensión>, armado por js/app.js
+const RUTA_VALIDA = /^pedidos\/[a-z0-9]{16,}-[A-Za-z0-9_-]{1,60}\.[a-z0-9]{1,4}$/;
 
 function origenPermitido(origen) {
   if (!origen) return true; // algunos navegadores no lo envían
@@ -30,20 +35,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    const respuesta = await handleUpload({
+    const respuesta = await handleUploadPresigned({
       request: req,
       body: req.body,
-      onBeforeGenerateToken: async (pathname) => {
+      getSignedToken: async (pathname) => {
         const extension = (pathname.split('.').pop() || '').toLowerCase();
-        if (!pathname.startsWith('pedidos/') || !EXTENSIONES.includes(extension)) {
+        if (!RUTA_VALIDA.test(pathname) || !EXTENSIONES.includes(extension)) {
           throw new Error('Tipo de archivo no permitido');
         }
-        return {
+        const limites = {
           allowedContentTypes: ['model/*', 'image/*'],
           maximumSizeInBytes: TAMANO_MAXIMO_MB * 1024 * 1024,
-          addRandomSuffix: true,
           validUntil: Date.now() + 30 * 60 * 1000
         };
+        const token = await issueSignedToken({ pathname, operations: ['put'], ...limites });
+        return { token, urlOptions: limites };
       }
     });
     return res.status(200).json(respuesta);

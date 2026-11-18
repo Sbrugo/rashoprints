@@ -275,6 +275,11 @@
       .replace(/[^a-zA-Z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'archivo';
     return base + '.' + ext;
   }
+  function codigoAlAzar() {
+    var bytes = new Uint8Array(10);
+    (window.crypto || window.msCrypto).getRandomValues(bytes);
+    return Array.prototype.map.call(bytes, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  }
   function subidaActivada() {
     return (cfg.stl.subirArchivos !== false) && /^https?:$/.test(location.protocol);
   }
@@ -310,11 +315,11 @@
     var ext = extension(archivo.name);
     if (!promesaCliente) promesaCliente = import(CLIENTE_BLOB);
     promesaCliente.then(function (cliente) {
-      return cliente.upload('pedidos/' + nombreSeguro(archivo.name), archivo, {
+      // El código al azar hace que el link del archivo no se pueda adivinar
+      return cliente.uploadPresigned('pedidos/' + codigoAlAzar() + '-' + nombreSeguro(archivo.name), archivo, {
         access: 'public',
         handleUploadUrl: '/api/subir',
         contentType: TIPOS[ext] || archivo.type,
-        multipart: archivo.size > 8 * 1024 * 1024,
         onUploadProgress: function (p) {
           if (subidas[tipo] !== s) return;
           s.porcentaje = Math.min(99, Math.round(p.percentage || 0));
