@@ -613,10 +613,102 @@
   }
 
   /* =========================================================
+     PIE DE PÁGINA: MARCA QUE SE IMPRIME Y FORMULARIO DE CONTACTO
+     ========================================================= */
+  function piePagina() {
+    var escena = $('#pieEscena'), marca = $('#pieMarca'), lectura = $('#pieLectura');
+    var CAPA = 6, pendiente = false;
+
+    function grafico() {
+      return $$('.pie__impresion', marca).filter(function (svg) { return svg.getBoundingClientRect().width > 0; })[0];
+    }
+    function avance() {
+      var alto = window.innerHeight;
+      if (getComputedStyle($('.pie__fijo', escena)).position === 'sticky') {
+        var r = escena.getBoundingClientRect();
+        return (alto - r.top - r.height * .46) / (r.height * .5);
+      }
+      var m = marca.getBoundingClientRect();
+      return (alto - m.top - m.height * .25) / (alto * .55);
+    }
+    function pintar() {
+      pendiente = false;
+      var svg = grafico();
+      if (!svg) return;
+      var base = +svg.getAttribute('data-base'), total = +svg.getAttribute('data-alto'), ancho = +svg.getAttribute('data-ancho');
+      var p = sinMovimiento ? 1 : Math.max(0, Math.min(1, avance()));
+      var capas = Math.ceil(total / CAPA), hechas = Math.round(p * capas);
+      var h = Math.min(total, hechas * CAPA), y = base - h;
+      var corte = $('.pie__corte', svg), nivel = $('.pie__nivel', svg), cabezal = $('.pie__cabezal', svg);
+      corte.setAttribute('y', y); corte.setAttribute('height', h);
+      nivel.setAttribute('y', y - 1);
+      cabezal.setAttribute('transform', 'translate(' + (ancho / 2 + Math.sin(hechas * .7) * ancho * .46).toFixed(1) + ' ' + y + ')');
+      var imprimiendo = p > 0 && p < 1;
+      marca.toggleAttribute('data-imprimiendo', imprimiendo);
+      lectura.textContent = p >= 1 ? 'Pieza lista' : 'Capa ' + hechas + ' de ' + capas;
+    }
+    function pedir() {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(pintar);
+    }
+    if (escena && marca) {
+      window.addEventListener('scroll', pedir, { passive: true });
+      window.addEventListener('resize', pedir);
+      pintar();
+    }
+
+    var formulario = $('#formContacto');
+    if (!formulario) return;
+    var correo = $('#contactoCorreo'), mensaje = $('#contactoMensaje'), trampa = $('#contactoEmpresa');
+    var error = $('#contacto-error'), fallo = $('#contactoFallo'), enviar = $('#contactoEnviar');
+    var textoBoton = enviar.textContent;
+
+    function marcarError(texto) {
+      error.textContent = texto;
+      correo.closest('.campo').classList.toggle('invalido', !!texto);
+      correo.setAttribute('aria-invalid', texto ? 'true' : 'false');
+    }
+    correo.addEventListener('input', function () { marcarError(''); });
+
+    formulario.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valor = correo.value.trim();
+      fallo.hidden = true;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor)) {
+        marcarError('Revisá tu correo. Tiene que ser como nombre@correo.com.');
+        correo.focus();
+        return;
+      }
+      marcarError('');
+      enviar.disabled = true;
+      enviar.textContent = 'Enviando…';
+      fetch('/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ correo: valor, mensaje: mensaje.value.trim(), empresa: trampa.value })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('Respuesta ' + r.status);
+        $('#contactoDestino').textContent = valor;
+        $('.pie__campos', formulario).hidden = true;
+        var ok = $('#contactoOk');
+        ok.hidden = false;
+        ok.focus({ preventScroll: true });
+      }).catch(function (err) {
+        if (window.console) console.warn('No se pudo enviar el contacto:', err);
+        fallo.hidden = false;
+        enviar.disabled = false;
+        enviar.textContent = textoBoton;
+      });
+    });
+  }
+
+  /* =========================================================
      INICIO
      ========================================================= */
   aplicarContacto();
   observarSecciones();
   animacionIdea();
   activarFocos();
+  piePagina();
 })();

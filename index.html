@@ -1437,60 +1437,244 @@
 
     <!-- ============ 10. PIE DE PÁGINA ============ -->
     <footer class="pie">
-      <div class="contenedor">
-        <p class="pie__frase">
-          Impresión 3D en <em class="resalte">Buenos Aires.</em>
-        </p>
-        <div class="pie__grilla">
-          <a
-            href="#inicio"
-            class="logo logo--claro"
-            aria-label="Rasho Prints, volver al inicio"
-          >
-            <span class="logo__marca" aria-hidden="true"
-              ><i></i><i></i><i></i
-            ></span>
-            RASHO<span class="logo__fino">PRINTS</span>
-          </a>
-          <nav aria-label="Secciones del sitio" class="pie__nav">
-            <a href="#llaveros">Llaveros personalizados</a>
-            <a href="#como-comprar">Cómo pedir</a>
-            <a href="#personalizada">Impresión personalizada</a>
-            <a href="#materiales">Materiales</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#preguntas">Preguntas frecuentes</a>
-            <a href="#contacto">Contacto</a>
-          </nav>
-          <div class="pie__contacto">
-            <a
-              href="mailto:rashoprints@gmail.com"
-              data-link="email"
-              data-text="email"
-              >rashoprints@gmail.com</a
+      <div class="pie__escena" id="pieEscena">
+        <div class="pie__fijo">
+          <div class="contenedor pie__cta">
+            <div class="pie__texto">
+              <p class="seccion__numero mono">08 · Hablemos</p>
+              <h2 id="pie-titulo">
+                Dejanos tu correo.
+                <em class="resalte">Te escribimos nosotros.</em>
+              </h2>
+              <p class="pie__bajada">
+                Contanos qué querés imprimir y te respondemos por correo. Si
+                todavía no lo tenés claro, lo vemos juntos.
+              </p>
+            </div>
+
+            <form
+              class="formulario pie__form"
+              id="formContacto"
+              aria-labelledby="pie-titulo"
+              novalidate
             >
-            <a
-              href="https://wa.me/5491164254177"
-              data-link="whatsapp"
-              target="_blank"
-              rel="noopener"
-              >WhatsApp
-              <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a
+              <div class="pie__campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoCorreo"
+                    >Tu correo</label
+                  >
+                  <input
+                    type="email"
+                    id="contactoCorreo"
+                    name="correo"
+                    autocomplete="email"
+                    inputmode="email"
+                    maxlength="120"
+                    placeholder="nombre@correo.com"
+                    aria-describedby="contacto-error"
+                    required
+                  />
+                  <p class="campo__error" id="contacto-error" role="alert"></p>
+                </div>
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoMensaje"
+                    >Qué querés imprimir
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <textarea
+                    id="contactoMensaje"
+                    name="mensaje"
+                    rows="2"
+                    maxlength="600"
+                    placeholder="Ej: 50 llaveros con mi logo"
+                  ></textarea>
+                </div>
+                <div class="pie__trampa" aria-hidden="true">
+                  <label for="contactoEmpresa">Empresa</label>
+                  <input
+                    type="text"
+                    id="contactoEmpresa"
+                    name="empresa"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="boton boton--lleno boton--ancho"
+                  id="contactoEnviar"
+                >
+                  Quiero que me escriban
+                </button>
+                <p class="pie__privacidad">
+                  Usamos tu correo solo para responderte.
+                </p>
+                <p class="pie__fallo" id="contactoFallo" role="alert" hidden>
+                  No pudimos enviarlo. Probá de nuevo o
+                  <a
+                    href="https://wa.me/5491164254177"
+                    data-link="whatsapp"
+                    target="_blank"
+                    rel="noopener"
+                    >escribinos por WhatsApp</a
+                  >.
+                </p>
+              </div>
+              <div class="pie__ok" id="contactoOk" tabindex="-1" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12.5l4.5 4.5L19 7.5" />
+                </svg>
+                <h3>Recibimos tu correo</h3>
+                <p>
+                  Te vamos a escribir a
+                  <strong id="contactoDestino"></strong>.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="contenedor pie__marca" id="pieMarca" aria-hidden="true">
+            <svg
+              class="pie__impresion pie__impresion--ancha"
+              viewBox="0 0 1200 270"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="252"
+              data-alto="224"
+              data-ancho="1200"
             >
-            <a
-              href="https://www.instagram.com/rashoprints/"
-              data-link="instagram"
-              target="_blank"
-              rel="noopener"
-              >Instagram @<span data-text="instagramUsuario"
-                >rashoprints</span
-              ></a
+              <defs>
+                <linearGradient id="pieColorA" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasA" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteA">
+                  <rect class="pie__corte" width="1200" y="28" height="224" />
+                </clipPath>
+              </defs>
+              <text class="pie__letras pie__letras--base" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs">RASHO</text>
+              <g clip-path="url(#pieCorteA)">
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieColorA)">RASHO</text>
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieCapasA)">RASHO</text>
+              </g>
+              <rect class="pie__nivel" width="1200" height="2" y="28" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <svg
+              class="pie__impresion pie__impresion--alta"
+              viewBox="0 0 600 410"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="396"
+              data-alto="376"
+              data-ancho="600"
             >
+              <defs>
+                <linearGradient id="pieColorB" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasB" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteB">
+                  <rect class="pie__corte" width="600" y="20" height="376" />
+                </clipPath>
+              </defs>
+              <g class="pie__letras pie__letras--base" font-size="240">
+                <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+              </g>
+              <g clip-path="url(#pieCorteB)">
+                <g class="pie__letras" font-size="240" fill="url(#pieColorB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+                <g class="pie__letras" font-size="240" fill="url(#pieCapasB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+              </g>
+              <rect class="pie__nivel" width="600" height="2" y="20" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <p class="pie__lectura mono" id="pieLectura">Pieza lista</p>
           </div>
         </div>
-        <p class="pie__legal mono">
-          © <span id="anio">2026</span> Rasho Prints. Todos los derechos
-          reservados.
-        </p>
+      </div>
+
+      <div class="pie__base">
+        <div class="contenedor">
+          <div class="pie__grilla">
+            <div class="pie__marca-texto">
+              <a
+                href="#inicio"
+                class="logo logo--claro"
+                aria-label="Rasho Prints, volver al inicio"
+              >
+                <span class="logo__marca" aria-hidden="true"
+                  ><i></i><i></i><i></i
+                ></span>
+                RASHO<span class="logo__fino">PRINTS</span>
+              </a>
+              <p>
+                Impresión 3D en Buenos Aires. Retiro en Núñez o envío por
+                motomensajería.
+              </p>
+            </div>
+            <nav aria-label="Secciones del sitio" class="pie__columna">
+              <p class="pie__titulo">Secciones</p>
+              <a href="#llaveros">Llaveros personalizados</a>
+              <a href="#como-comprar">Cómo pedir</a>
+              <a href="#personalizada">Impresión personalizada</a>
+              <a href="#materiales">Materiales</a>
+              <a href="#nosotros">Nosotros</a>
+              <a href="#preguntas">Preguntas frecuentes</a>
+            </nav>
+            <div class="pie__columna">
+              <p class="pie__titulo">Contacto</p>
+              <a
+                href="https://wa.me/5491164254177"
+                data-link="whatsapp"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp
+                <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a
+              >
+              <a
+                href="mailto:rashoprints@gmail.com"
+                data-link="email"
+                data-text="email"
+                >rashoprints@gmail.com</a
+              >
+              <a
+                href="https://www.instagram.com/rashoprints/"
+                data-link="instagram"
+                target="_blank"
+                rel="noopener"
+                >Instagram @<span data-text="instagramUsuario"
+                  >rashoprints</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="pie__legal mono">
+            <p>
+              © <span id="anio">2026</span> Rasho Prints. Todos los derechos
+              reservados.
+            </p>
+            <a href="#inicio">Volver arriba ↑</a>
+          </div>
+        </div>
       </div>
     </footer>
 

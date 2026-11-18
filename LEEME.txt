@@ -49,6 +49,19 @@ Si al probar desde tu misma cuenta de WhatsApp aparece tu propio número, es nor
 el mensaje va dirigido al número del negocio.
 
 
+CÓMO RECIBIR LOS CORREOS DEL PIE DE PÁGINA
+------------------------------------------
+Cada correo que dejan en el pie se guarda en Vercel: Storage > tu Blob > carpeta
+"contactos". Esa carpeta no se borra sola.
+Para que además te llegue un aviso a rashoprints@gmail.com:
+1. Creá una cuenta gratis en https://resend.com con rashoprints@gmail.com.
+2. Creá una API key.
+3. En Vercel: Settings > Environment Variables, agregá RESEND_API_KEY con esa clave.
+4. Volvé a publicar la web. Para responder, contestá el correo que te llega.
+Para avisar a otra casilla necesitás verificar tu dominio en Resend y agregar
+CONTACTO_DESTINO y CONTACTO_REMITENTE.
+
+
 LIMITACIONES DE ESTA VERSIÓN
 ----------------------------
 · No hay pago online: el pago y la entrega se coordinan por WhatsApp.
