@@ -406,7 +406,7 @@
   function mensajeCotizacion() {
     var nombre = ($('#stlNombre') ? $('#stlNombre').value.trim() : '');
     var email = ($('#stlEmail') ? $('#stlEmail').value.trim() : '');
-    var mat = ($('#stlMaterial') ? $('#stlMaterial').value : 'PLA');
+    var mat = ($('#stlMaterial') ? $('#stlMaterial').value : '');
     var color = ($('#stlColor') ? $('#stlColor').value : '');
     var medidas = ($('#stlMedidas') ? $('#stlMedidas').value.trim() : '');
     var desc = ($('#stlDescripcion') ? $('#stlDescripcion').value.trim() : '');
@@ -446,8 +446,9 @@
     if (idea) lineas.push('Idea: ' + idea);
     if (medidas) lineas.push('Medidas aproximadas: ' + medidas);
     lineas.push('Cantidad de piezas: ' + (cantidad > 0 ? cantidad : 1));
-    lineas.push('Uso: ' + $('#ideaUso').value);
-    lineas.push('Material: ' + $('#stlMaterial').value);
+    // Solo se envía lo que el cliente eligió; "A definir" (valor vacío) no se incluye
+    if ($('#ideaUso').value) lineas.push('Uso: ' + $('#ideaUso').value);
+    if ($('#stlMaterial').value) lineas.push('Material: ' + $('#stlMaterial').value);
     if ($('#stlColor').value) lineas.push('Color: ' + $('#stlColor').value);
     if (nombre) lineas.push('Nombre: ' + nombre);
     if (email) lineas.push('Email: ' + email);
@@ -538,7 +539,7 @@
     // Colores del selector STL
     var selColor = $('#stlColor');
     if (selColor) {
-      selColor.innerHTML = Object.keys(cfg.colores).map(function (k) {
+      selColor.innerHTML = '<option value="" selected>A definir</option>' + Object.keys(cfg.colores).map(function (k) {
         return '<option value="' + escapar(cfg.colores[k].nombre) + '">' + escapar(cfg.colores[k].nombre) + '</option>';
       }).join('') + '<option value="Otro (lo detallo en WhatsApp)">Otro (lo detallo en WhatsApp)</option>';
     }
