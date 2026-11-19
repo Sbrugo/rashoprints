@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impresión 3D personalizada | Rasho Prints</title>
+    <meta name="description" content="Subí tu archivo 3D o una foto de tu idea, elegí entre PLA y PETG y cotizá por WhatsApp." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="https://www.rashoprints.com/impresion-personalizada" />
+    <link rel="icon" href="img/sitio/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/sitio/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Rasho Prints" />
+    <meta property="og:title" content="Impresión 3D personalizada | Rasho Prints" />
+    <meta property="og:description" content="Subí tu archivo 3D o una foto de tu idea, elegí entre PLA y PETG y cotizá por WhatsApp." />
+    <meta property="og:url" content="https://www.rashoprints.com/impresion-personalizada" />
+    <meta property="og:image" content="https://www.rashoprints.com/img/sitio/compartir.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="saltar" href="#principal">Saltar al contenido</a>
+
+    <!-- La barra y el pie se repiten en las 4 páginas: si cambiás uno, cambiá todos -->
+    <header class="barra" id="barra">
+      <div class="contenedor barra__fila">
+        <a href="index.html" class="logo" aria-label="Rasho Prints, ir al inicio">
+          <span class="logo__marca" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+          RASHO<span class="logo__fino">PRINTS</span>
+        </a>
+
+        <nav class="menu" id="menu" aria-label="Principal">
+          <a href="servicios.html">Servicios</a>
+          <a href="como-funciona.html">Cómo funciona</a>
+          <a href="impresion-personalizada.html" class="activo" aria-current="page">Impresión personalizada</a>
+          <a href="index.html#preguntas">Preguntas frecuentes</a>
+          <a href="index.html#contacto" class="menu__solo-movil">Contacto</a>
+        </nav>
+
+        <div class="barra__acciones">
+          <button
+            class="boton-icono menu-boton"
+            id="botonMenu"
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="progreso" id="progreso" aria-hidden="true"></div>
+    </header>
+
+    <main id="principal">
+      <section
+        class="seccion seccion--oscura"
+        id="personalizada"
+        aria-labelledby="stl-titulo"
+      >
+        <div class="contenedor stl">
+          <div class="stl__intro">
+            <p class="seccion__numero mono">Impresión personalizada</p>
+            <h1 id="stl-titulo">
+              ¿Tenés un modelo 3D?
+              <em class="resalte">Nosotros lo imprimimos.</em>
+            </h1>
+            <p class="seccion__bajada">
+              Mandanos el archivo y contanos qué necesitás. Revisamos las medidas y
+              te decimos qué material conviene, cuánto tarda y cuánto sale.
+            </p>
+            <ul class="stl__lista">
+              <li>
+                ¿No tenés archivo 3D? Mandanos una foto o boceto de tu idea y la
+                diseñamos.
+              </li>
+              <li>Cada archivo lo revisamos nosotros.</li>
+              <li>Te mandamos la cotización por WhatsApp.</li>
+              <li>
+                Guardamos tu archivo 30 días y después se borra solo.
+              </li>
+            </ul>
+          </div>
+
+          <form class="formulario" id="formSTL" data-modo="stl" novalidate>
+            <fieldset class="modo-envio">
+              <legend class="campo__etiqueta">
+                ¿Qué tenés para mostrarnos?
+              </legend>
+              <label class="modo-envio__op">
+                <input type="radio" name="modo" value="stl" checked />
+                <span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z" />
+                    <path d="M4 7.5l8 4.5 8-4.5M12 12v9" />
+                  </svg>
+                  <strong>Un archivo 3D</strong>
+                  <small>STL, OBJ, 3MF o STEP</small>
+                </span>
+              </label>
+              <label class="modo-envio__op">
+                <input type="radio" name="modo" value="idea" />
+                <span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18h6M10 21h4" />
+                    <path
+                      d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"
+                    />
+                  </svg>
+                  <strong>Una idea</strong>
+                  <small>Foto, boceto o imagen</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="campo campo--subir" data-solo="stl">
+              <span class="campo__etiqueta" id="stl-archivo-etq"
+                >Subí tu archivo 3D</span
+              >
+              <label class="soltar" id="zonaSoltar" for="archivoSTL">
+                <input
+                  type="file"
+                  id="archivoSTL"
+                  name="archivo"
+                  accept=".stl,.obj,.3mf,.step,.stp,model/*,application/*"
+                  aria-describedby="stl-ayuda"
+                  aria-labelledby="stl-archivo-etq"
+                />
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"
+                  />
+                </svg>
+                <span
+                  ><strong>Elegí tu archivo</strong> o arrastralo acá</span
+                >
+                <span class="soltar__ayuda" id="stl-ayuda"
+                  >STL, OBJ, 3MF o STEP, hasta 25 MB. Se sube solo y va con tu
+                  mensaje de WhatsApp.</span
+                >
+              </label>
+              <div class="archivo-elegido" id="archivoElegido" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"
+                  />
+                  <path d="M14 3v5h5" />
+                </svg>
+                <div class="archivo-elegido__datos">
+                  <span
+                    class="archivo-elegido__nombre"
+                    id="archivoNombre"
+                  ></span>
+                  <span
+                    class="archivo-elegido__peso mono"
+                    id="archivoPeso"
+                  ></span>
+                  <span
+                    class="archivo-elegido__estado"
+                    id="archivoEstado"
+                    aria-live="polite"
+                  ></span>
+                </div>
+                <button
+                  type="button"
+                  class="enlace-boton"
+                  id="quitarArchivo"
+                  aria-label="Cambiar archivo"
+                >
+                  Cambiar
+                </button>
+              </div>
+              <p class="campo__error" id="stl-error-archivo" role="alert"></p>
+            </div>
+
+            <div class="campo campo--subir" data-solo="idea" hidden>
+              <span class="campo__etiqueta" id="idea-archivo-etq"
+                >Subí una foto o imagen de tu idea</span
+              >
+              <label class="soltar" id="zonaIdea" for="archivoIdea">
+                <input
+                  type="file"
+                  id="archivoIdea"
+                  name="imagen"
+                  accept="image/*,.png,.jpg,.jpeg,.webp,.heic"
+                  aria-describedby="idea-ayuda"
+                  aria-labelledby="idea-archivo-etq"
+                />
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="16" rx="1.5" />
+                  <circle cx="9" cy="10" r="2" />
+                  <path d="M21 16l-5-5-9 9" />
+                </svg>
+                <span><strong>Elegí una imagen</strong> o arrastrala acá</span>
+                <span class="soltar__ayuda" id="idea-ayuda"
+                  >PNG, JPG o WEBP, hasta 25 MB. Puede ser una foto, un boceto a
+                  mano o una referencia.</span
+                >
+              </label>
+              <div
+                class="archivo-elegido imagen-elegida"
+                id="imagenElegida"
+                hidden
+              >
+                <img
+                  id="imagenVista"
+                  src=""
+                  alt="Vista previa de la imagen elegida"
+                  width="64"
+                  height="64"
+                />
+                <div class="archivo-elegido__datos">
+                  <span
+                    class="archivo-elegido__nombre"
+                    id="imagenNombre"
+                  ></span>
+                  <span
+                    class="archivo-elegido__peso mono"
+                    id="imagenPeso"
+                  ></span>
+                  <span
+                    class="archivo-elegido__estado"
+                    id="imagenEstado"
+                    aria-live="polite"
+                  ></span>
+                </div>
+                <button
+                  type="button"
+                  class="enlace-boton"
+                  id="quitarImagen"
+                  aria-label="Cambiar imagen"
+                >
+                  Cambiar
+                </button>
+              </div>
+              <p class="campo__error" id="idea-error-imagen" role="alert"></p>
+            </div>
+
+            <div class="campo" data-solo="idea" hidden>
+              <label class="campo__etiqueta" for="ideaDescripcion"
+                >Contanos tu idea</label
+              >
+              <textarea
+                id="ideaDescripcion"
+                name="idea"
+                rows="3"
+                maxlength="1200"
+                placeholder="¿Qué querés que hagamos? ¿Para qué se va a usar? ¿Tiene que encastrar con algo, soportar peso o estar al aire libre?"
+              ></textarea>
+            </div>
+
+            <details class="mas-detalles" id="masDetalles">
+              <summary>
+                <span
+                  >Más detalles <span class="opcional">(opcional)</span></span
+                >
+                <small data-solo="idea" hidden
+                  >Medidas, cantidad, uso, material, color y tus datos</small
+                >
+                <small data-solo="stl"
+                  >Material, color, medidas, aclaraciones y tus datos</small
+                >
+              </summary>
+              <div class="mas-detalles__cuerpo">
+                <div class="fila-2" data-solo="idea" hidden>
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="ideaMedidas"
+                      >Medidas aproximadas
+                      <span class="opcional">(opcional)</span></label
+                    >
+                    <input
+                      type="text"
+                      id="ideaMedidas"
+                      name="ideaMedidas"
+                      maxlength="120"
+                      placeholder="Ej: 15 × 8 × 5 cm"
+                    />
+                  </div>
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="ideaCantidad"
+                      >Cantidad de piezas</label
+                    >
+                    <input
+                      type="number"
+                      id="ideaCantidad"
+                      name="ideaCantidad"
+                      min="1"
+                      max="999"
+                      value="1"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+
+                <div class="campo" data-solo="idea" hidden>
+                  <label class="campo__etiqueta" for="ideaUso"
+                    >Uso de la pieza</label
+                  >
+                  <select id="ideaUso" name="ideaUso">
+                    <option value="" selected>A definir</option>
+                    <option value="Decorativo">Decorativo</option>
+                    <option value="Funcional / repuesto">
+                      Funcional / repuesto
+                    </option>
+                    <option value="Regalo o souvenir">Regalo o souvenir</option>
+                    <option value="Prototipo o maqueta">
+                      Prototipo o maqueta
+                    </option>
+                    <option value="Otro (lo detallo en WhatsApp)">
+                      Otro (lo detallo en WhatsApp)
+                    </option>
+                  </select>
+                </div>
+
+                <div class="fila-2">
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="stlNombre"
+                      >Nombre <span class="opcional">(opcional)</span></label
+                    >
+                    <input
+                      type="text"
+                      id="stlNombre"
+                      name="nombre"
+                      autocomplete="name"
+                      maxlength="80"
+                    />
+                  </div>
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="stlEmail"
+                      >Correo electrónico
+                      <span class="opcional">(opcional)</span></label
+                    >
+                    <input
+                      type="email"
+                      id="stlEmail"
+                      name="email"
+                      autocomplete="email"
+                      maxlength="120"
+                    />
+                  </div>
+                </div>
+
+                <div class="fila-2">
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="stlMaterial"
+                      >Material</label
+                    >
+                    <select id="stlMaterial" name="material">
+                      <option value="" selected>A definir</option>
+                      <option value="PLA">PLA</option>
+                      <option value="PETG">PETG</option>
+                      <option value="No sé, necesito asesoramiento">
+                        No sé, necesito asesoramiento
+                      </option>
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label class="campo__etiqueta" for="stlColor">Color</label>
+                    <select id="stlColor" name="color"></select>
+                  </div>
+                </div>
+
+                <div class="campo" data-solo="stl">
+                  <label class="campo__etiqueta" for="stlMedidas"
+                    >Medidas o cantidad
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <input
+                    type="text"
+                    id="stlMedidas"
+                    name="medidas"
+                    maxlength="160"
+                    placeholder="Ej: 2 unidades, de unos 10 cm de alto"
+                  />
+                </div>
+
+                <div class="campo" data-solo="stl">
+                  <label class="campo__etiqueta" for="stlDescripcion"
+                    >Contanos tu proyecto
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <textarea
+                    id="stlDescripcion"
+                    name="descripcion"
+                    rows="3"
+                    maxlength="1200"
+                    placeholder="¿Para qué se va a usar la pieza? ¿Tiene que encastrar, soportar peso o estar al aire libre?"
+                  ></textarea>
+                </div>
+              </div>
+            </details>
+
+            <p class="aviso-wa">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 8v5M12 16.5v.01" />
+              </svg>
+              <span data-solo="stl"
+                >Se abre WhatsApp con tu pedido y el link del archivo. Solo tenés que
+                enviar el mensaje.</span
+              >
+              <span data-solo="idea" hidden
+                >Se abre WhatsApp con tu idea, tus datos y el link de la imagen. Solo
+                tenés que enviar el mensaje.</span
+              >
+            </p>
+
+            <button
+              type="submit"
+              class="boton boton--lleno boton--ancho"
+              id="btnCompartirSTL"
+            >
+              <span data-solo="stl">Enviar archivo por WhatsApp</span>
+              <span data-solo="idea" hidden>Enviar mi idea por WhatsApp</span>
+            </button>
+
+            <div class="resultado-stl" id="resultadoSTL" hidden tabindex="-1">
+              <h3>Te llevamos a WhatsApp</h3>
+              <ol>
+                <li>
+                  En el chat de WhatsApp que se abrió, revisá el mensaje y
+                  envialo.
+                </li>
+                <li class="paso-link" hidden>
+                  El mensaje ya incluye el link para que descarguemos
+                  <span data-solo="stl">tu archivo</span
+                  ><span data-solo="idea" hidden>tu imagen</span>.
+                </li>
+                <li class="paso-adjuntar" data-solo="stl">
+                  Tocá el clip (📎) o el botón <strong>+</strong> y elegí
+                  <strong>Documento</strong>.
+                </li>
+                <li class="paso-adjuntar" data-solo="idea" hidden>
+                  Tocá el clip (📎) o el botón <strong>+</strong> y elegí
+                  <strong>Galería</strong> o <strong>Fotos</strong>.
+                </li>
+                <li class="paso-adjuntar">
+                  Adjuntá <span data-solo="stl">el archivo</span
+                  ><span data-solo="idea" hidden>la imagen</span>
+                  <strong id="resultadoArchivo"></strong>.
+                </li>
+              </ol>
+              <p class="resultado-stl__nota paso-adjuntar">
+                Recibimos tu pedido cuando enviás el mensaje y
+                <span data-solo="stl">el archivo</span
+                ><span data-solo="idea" hidden>la imagen</span>. Te respondemos
+                con la cotización.
+              </p>
+              <p>
+                <a href="#" id="reabrirWhatsSTL" target="_blank" rel="noopener"
+                  >¿No se abrió WhatsApp? Tocá acá para abrirlo</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion--clara"
+        id="materiales"
+        aria-labelledby="materiales-titulo"
+      >
+        <div class="contenedor">
+          <div class="seccion__cabecera">
+            <p class="seccion__numero mono">Materiales</p>
+            <h2 id="materiales-titulo">
+              Dos materiales, <em class="resalte">según el uso.</em>
+            </h2>
+            <p class="seccion__bajada">
+              Trabajamos con PLA y PETG. Si no sabés cuál te conviene, contanos para
+              qué es la pieza y te orientamos.
+            </p>
+          </div>
+
+          <div class="materiales">
+            <article class="material">
+              <div
+                class="material__muestra material__muestra--pla"
+                aria-hidden="true"
+              ></div>
+              <p class="mono material__codigo">PLA</p>
+              <h3>PLA, para piezas con detalle</h3>
+              <p>
+                Es muy usado en impresión 3D. Define bien los detalles y viene en
+                muchos colores.
+              </p>
+              <ul class="lista-check">
+                <li>Objetos decorativos</li>
+                <li>Organizadores</li>
+                <li>Prototipos</li>
+                <li>Accesorios de uso cotidiano</li>
+              </ul>
+            </article>
+            <article class="material">
+              <div
+                class="material__muestra material__muestra--petg"
+                aria-hidden="true"
+              ></div>
+              <p class="mono material__codigo">PETG</p>
+              <h3>PETG, para piezas que se exigen</h3>
+              <p>
+                Es más tenaz que el PLA y se comporta mejor cuando la pieza tiene un
+                uso exigente.
+              </p>
+              <ul class="lista-check">
+                <li>Piezas funcionales</li>
+                <li>Componentes que necesitan más tenacidad</li>
+                <li>Objetos que no son solo decorativos</li>
+              </ul>
+            </article>
+          </div>
+
+          <div
+            class="comparar"
+            role="region"
+            aria-labelledby="comparar-titulo"
+            tabindex="0"
+          >
+            <h3 id="comparar-titulo" class="mono comparar__titulo">
+              Comparación rápida
+            </h3>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span class="sr-only">Característica</span>
+                  </th>
+                  <th scope="col">PLA</th>
+                  <th scope="col">PETG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Definición de detalles</th>
+                  <td><span class="nivel" data-n="3"></span>Muy buena</td>
+                  <td><span class="nivel" data-n="2"></span>Buena</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tenacidad</th>
+                  <td><span class="nivel" data-n="1"></span>Menor</td>
+                  <td><span class="nivel" data-n="3"></span>Mayor</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tolerancia al calor</th>
+                  <td><span class="nivel" data-n="1"></span>Menor</td>
+                  <td>
+                    <span class="nivel" data-n="2"></span>Algo mayor que el PLA
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sirve para</th>
+                  <td>Decoración, organizadores, prototipos</td>
+                  <td>Piezas funcionales y de uso exigente</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="comparar__nota">
+              Es una comparación orientativa: el resultado depende del diseño de la
+              pieza y de cómo se use. Consultanos antes de usar una pieza cerca
+              del calor, con cargas, al aire libre o con productos químicos.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie__escena" id="pieEscena">
+        <div class="pie__fijo">
+          <div class="contenedor pie__cta">
+            <div class="pie__texto">
+              <p class="seccion__numero mono">Hablemos</p>
+              <h2 id="pie-titulo">
+                Dejanos tu correo.
+                <em class="resalte">Te escribimos nosotros.</em>
+              </h2>
+              <p class="pie__bajada">
+                Contanos qué querés imprimir y te respondemos por correo. Si
+                todavía no lo tenés claro, lo vemos juntos.
+              </p>
+            </div>
+
+            <form
+              class="formulario pie__form"
+              id="formContacto"
+              aria-labelledby="pie-titulo"
+              novalidate
+            >
+              <div class="pie__campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoCorreo"
+                    >Tu correo</label
+                  >
+                  <input
+                    type="email"
+                    id="contactoCorreo"
+                    name="correo"
+                    autocomplete="email"
+                    inputmode="email"
+                    maxlength="120"
+                    placeholder="nombre@correo.com"
+                    aria-describedby="contacto-error"
+                    required
+                  />
+                  <p class="campo__error" id="contacto-error" role="alert"></p>
+                </div>
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoMensaje"
+                    >Qué querés imprimir
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <textarea
+                    id="contactoMensaje"
+                    name="mensaje"
+                    rows="2"
+                    maxlength="600"
+                    placeholder="Ej: 50 llaveros con mi logo"
+                  ></textarea>
+                </div>
+                <div class="pie__trampa" aria-hidden="true">
+                  <label for="contactoEmpresa">Empresa</label>
+                  <input
+                    type="text"
+                    id="contactoEmpresa"
+                    name="empresa"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="boton boton--lleno boton--ancho"
+                  id="contactoEnviar"
+                >
+                  Quiero que me escriban
+                </button>
+                <p class="pie__privacidad">
+                  Usamos tu correo solo para responderte.
+                </p>
+                <p class="pie__fallo" id="contactoFallo" role="alert" hidden>
+                  No pudimos enviarlo. Probá de nuevo o
+                  <a
+                    href="https://wa.me/5491164254177"
+                    data-link="whatsapp"
+                    target="_blank"
+                    rel="noopener"
+                    >escribinos por WhatsApp</a
+                  >.
+                </p>
+              </div>
+              <div class="pie__ok" id="contactoOk" tabindex="-1" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12.5l4.5 4.5L19 7.5" />
+                </svg>
+                <h3>Recibimos tu correo</h3>
+                <p>
+                  Te vamos a escribir a
+                  <strong id="contactoDestino"></strong>.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="contenedor pie__marca" id="pieMarca" aria-hidden="true">
+            <svg
+              class="pie__impresion pie__impresion--ancha"
+              viewBox="0 0 1200 270"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="252"
+              data-alto="224"
+              data-ancho="1200"
+            >
+              <defs>
+                <linearGradient id="pieColorA" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasA" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteA">
+                  <rect class="pie__corte" width="1200" y="28" height="224" />
+                </clipPath>
+              </defs>
+              <text class="pie__letras pie__letras--base" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs">RASHO</text>
+              <g clip-path="url(#pieCorteA)">
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieColorA)">RASHO</text>
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieCapasA)">RASHO</text>
+              </g>
+              <rect class="pie__nivel" width="1200" height="2" y="28" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <svg
+              class="pie__impresion pie__impresion--alta"
+              viewBox="0 0 600 410"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="396"
+              data-alto="376"
+              data-ancho="600"
+            >
+              <defs>
+                <linearGradient id="pieColorB" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasB" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteB">
+                  <rect class="pie__corte" width="600" y="20" height="376" />
+                </clipPath>
+              </defs>
+              <g class="pie__letras pie__letras--base" font-size="240">
+                <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+              </g>
+              <g clip-path="url(#pieCorteB)">
+                <g class="pie__letras" font-size="240" fill="url(#pieColorB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+                <g class="pie__letras" font-size="240" fill="url(#pieCapasB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+              </g>
+              <rect class="pie__nivel" width="600" height="2" y="20" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <p class="pie__lectura mono" id="pieLectura">Pieza lista</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie__base">
+        <div class="contenedor">
+          <div class="pie__grilla">
+            <div class="pie__marca-texto">
+              <a
+                href="index.html"
+                class="logo logo--claro"
+                aria-label="Rasho Prints, volver al inicio"
+              >
+                <span class="logo__marca" aria-hidden="true"
+                  ><i></i><i></i><i></i
+                ></span>
+                RASHO<span class="logo__fino">PRINTS</span>
+              </a>
+              <p>
+                Impresión 3D en Buenos Aires. Retiro en Núñez o envío por
+                motomensajería.
+              </p>
+            </div>
+            <nav aria-label="Secciones del sitio" class="pie__columna">
+              <p class="pie__titulo">Secciones</p>
+              <a href="servicios.html">Servicios</a>
+              <a href="servicios.html#llaveros">Llaveros personalizados</a>
+              <a href="como-funciona.html">Cómo funciona</a>
+              <a href="como-funciona.html#nosotros">Nosotros</a>
+              <a href="impresion-personalizada.html">Impresión personalizada</a>
+              <a href="impresion-personalizada.html#materiales">Materiales</a>
+              <a href="index.html#preguntas">Preguntas frecuentes</a>
+            </nav>
+            <div class="pie__columna">
+              <p class="pie__titulo">Contacto</p>
+              <a
+                href="https://wa.me/5491164254177"
+                data-link="whatsapp"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp
+                <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a
+              >
+              <a
+                href="mailto:rashoprints@gmail.com"
+                data-link="email"
+                data-text="email"
+                >rashoprints@gmail.com</a
+              >
+              <a
+                href="https://www.instagram.com/rashoprints/"
+                data-link="instagram"
+                target="_blank"
+                rel="noopener"
+                >Instagram @<span data-text="instagramUsuario"
+                  >rashoprints</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="pie__legal mono">
+            <p>
+              © <span id="anio">2026</span> Rasho Prints. Todos los derechos
+              reservados.
+            </p>
+            <a href="#principal">Volver arriba ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -3,7 +3,10 @@ RASHO PRINTS — PÁGINA WEB (versión 1)
 
 ARCHIVOS
 --------
-index.html                  La página (todas las secciones).
+index.html                  Portada: resúmenes, preguntas frecuentes y contacto.
+servicios.html              Tarjetas de servicios y llaveros personalizados.
+como-funciona.html          Cómo pedir y quiénes somos.
+impresion-personalizada.html  Formulario de pedido y materiales.
 css/estilos.css             Diseño: colores, tipografías, tamaños.
 js/productos.js             ★ CONFIGURACIÓN: colores y datos de contacto.
 js/app.js                   Funcionamiento: WhatsApp y formulario de pedido personalizado. (No hace falta tocarlo.)
@@ -47,6 +50,14 @@ CÓMO PROBAR EL PEDIDO PERSONALIZADO
    mensaje sale sin link y el cliente adjunta el archivo a mano en el chat.
 Si al probar desde tu misma cuenta de WhatsApp aparece tu propio número, es normal:
 el mensaje va dirigido al número del negocio.
+
+
+CÓMO AGREGAR TUS FOTOS EN SERVICIOS
+-----------------------------------
+Guardá las fotos en img/trabajos/ con estos nombres y aparecen solas:
+llaveros.webp, piezas.webp y prototipos.webp (800 x 500 px).
+Mientras falte una, su tarjeta muestra "Foto pendiente": no publiques la web así.
+La barra y el pie se repiten en las 4 páginas: si cambiás uno, cambiá todos.
 
 
 CÓMO RECIBIR LOS CORREOS DEL PIE DE PÁGINA

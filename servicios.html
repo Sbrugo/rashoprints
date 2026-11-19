@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Servicios de impresión 3D | Rasho Prints</title>
+    <meta name="description" content="Llaveros personalizados, piezas a medida y prototipos impresos en 3D en Buenos Aires." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="https://www.rashoprints.com/servicios" />
+    <link rel="icon" href="img/sitio/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/sitio/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Rasho Prints" />
+    <meta property="og:title" content="Servicios de impresión 3D | Rasho Prints" />
+    <meta property="og:description" content="Llaveros personalizados, piezas a medida y prototipos impresos en 3D en Buenos Aires." />
+    <meta property="og:url" content="https://www.rashoprints.com/servicios" />
+    <meta property="og:image" content="https://www.rashoprints.com/img/sitio/compartir.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="saltar" href="#principal">Saltar al contenido</a>
+
+    <!-- La barra y el pie se repiten en las 4 páginas: si cambiás uno, cambiá todos -->
+    <header class="barra" id="barra">
+      <div class="contenedor barra__fila">
+        <a href="index.html" class="logo" aria-label="Rasho Prints, ir al inicio">
+          <span class="logo__marca" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+          RASHO<span class="logo__fino">PRINTS</span>
+        </a>
+
+        <nav class="menu" id="menu" aria-label="Principal">
+          <a href="servicios.html" class="activo" aria-current="page">Servicios</a>
+          <a href="como-funciona.html">Cómo funciona</a>
+          <a href="impresion-personalizada.html">Impresión personalizada</a>
+          <a href="index.html#preguntas">Preguntas frecuentes</a>
+          <a href="index.html#contacto" class="menu__solo-movil">Contacto</a>
+        </nav>
+
+        <div class="barra__acciones">
+          <button
+            class="boton-icono menu-boton"
+            id="botonMenu"
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="progreso" id="progreso" aria-hidden="true"></div>
+    </header>
+
+    <main id="principal">
+      <!-- Fotos: guardalas en img/trabajos/ como llaveros.webp, piezas.webp y prototipos.webp -->
+      <section class="seccion seccion--oscura" id="servicios" aria-labelledby="servicios-titulo">
+        <div class="contenedor">
+          <div class="seccion__cabecera">
+            <p class="seccion__numero mono">Servicios</p>
+            <h1 id="servicios-titulo">
+              Qué podemos <em class="resalte">imprimirte.</em>
+            </h1>
+          </div>
+          <div class="servicios">
+            <article class="servicio">
+              <div class="servicio__foto">
+                <span class="servicio__pendiente mono">Foto pendiente</span>
+                <img
+                  src="img/trabajos/llaveros.webp"
+                  alt="Llaveros impresos en 3D con logo"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  onerror="this.remove()"
+                />
+              </div>
+              <h2>Llaveros personalizados</h2>
+              <p>Con tu logo o tu diseño, para tu marca, eventos o regalos.</p>
+              <a class="servicio__enlace" href="#llaveros">Ver llaveros</a>
+            </article>
+            <article class="servicio">
+              <div class="servicio__foto">
+                <span class="servicio__pendiente mono">Foto pendiente</span>
+                <img
+                  src="img/trabajos/piezas.webp"
+                  alt="Pieza a medida impresa en 3D"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  onerror="this.remove()"
+                />
+              </div>
+              <h2>Piezas a medida</h2>
+              <p>Piezas funcionales y repuestos a partir de tu archivo 3D.</p>
+              <a class="servicio__enlace" href="impresion-personalizada.html?modo=stl#formSTL">Cotizar mi archivo</a>
+            </article>
+            <article class="servicio">
+              <div class="servicio__foto">
+                <span class="servicio__pendiente mono">Foto pendiente</span>
+                <img
+                  src="img/trabajos/prototipos.webp"
+                  alt="Prototipo impreso en 3D"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  onerror="this.remove()"
+                />
+              </div>
+              <h2>Prototipos</h2>
+              <p>Para probar forma y medidas antes de fabricar, desde un boceto o una foto.</p>
+              <a class="servicio__enlace" href="impresion-personalizada.html?modo=idea#formSTL">Contar mi idea</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion--oscura llaveros"
+        id="llaveros"
+        aria-labelledby="llaveros-titulo"
+      >
+        <div class="contenedor">
+          <div class="llaveros__principal">
+            <div class="llaveros__texto">
+              <p class="seccion__numero mono">Llaveros personalizados</p>
+              <h2 id="llaveros-titulo">
+                Llaveros con el logo de <em class="resalte">tu marca.</em>
+              </h2>
+              <p class="seccion__bajada">
+                Diseñamos e imprimimos en 3D llaveros con tu logo, el nombre de tu
+                emprendimiento o el diseño que quieras.
+              </p>
+              <ul class="llaveros__usos" aria-label="Ideas de uso">
+                <li>Logo de tu marca</li>
+                <li>Nombres e iniciales</li>
+                <li>Merch para eventos</li>
+                <li>Regalos de empresa</li>
+                <li>Souvenirs</li>
+                <li>Egresados y equipos</li>
+              </ul>
+              <div class="llaveros__cta">
+                <a
+                  class="boton boton--acento"
+                  href="https://wa.me/5491164254177"
+                  data-wa-mensaje="Hola Rasho Prints! Me interesan los llaveros personalizados para mi marca / emprendimiento. Les cuento mi idea:"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" />
+                    <path
+                      d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"
+                    />
+                  </svg>
+                  Pedí tus llaveros por WhatsApp
+                </a>
+                <p class="llaveros__nota">
+                  Contanos qué querés y te pasamos una propuesta con la cotización.
+                </p>
+              </div>
+            </div>
+
+            <figure class="llaveros__imagen">
+              <svg
+                viewBox="0 0 560 560"
+                role="img"
+                aria-label="Ilustración de tres llaveros impresos en 3D con la palabra RASHO, en negro, blanco y azul"
+              >
+                <defs>
+                  <pattern
+                    id="llPuntos"
+                    width="28"
+                    height="28"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <circle cx="14" cy="14" r="2" fill="rgba(0,0,0,.13)" />
+                  </pattern>
+                  <pattern
+                    id="llCapas"
+                    width="8"
+                    height="4"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <rect y="3" width="8" height=".8" fill="rgba(0,0,0,.16)" />
+                    <rect width="8" height=".8" fill="rgba(255,255,255,.07)" />
+                  </pattern>
+                  <g id="llForma">
+                    <rect x="-22" y="70" width="44" height="40" rx="12" />
+                    <rect x="-105" y="96" width="210" height="96" rx="22" />
+                  </g>
+                </defs>
+                <rect class="llaveros__panel" width="560" height="560" />
+                <rect width="560" height="560" fill="url(#llPuntos)" />
+
+                <!-- Llavero negro -->
+                <g
+                  class="llavero"
+                  style="
+                    transform-origin: 155px 60px;
+                    animation-duration: 4.2s;
+                    animation-delay: -1s;
+                  "
+                >
+                  <g transform="translate(155 52) rotate(-5)">
+                    <circle class="llavero__aro" cy="24" r="20" />
+                    <use href="#llForma" y="8" fill="#000" />
+                    <use href="#llForma" fill="#1c1c1e" />
+                    <use href="#llForma" fill="url(#llCapas)" />
+                    <circle cy="82" r="6.5" class="llavero__agujero" />
+                    <ellipse
+                      class="llavero__aro llavero__aro--chico"
+                      cy="60"
+                      rx="7"
+                      ry="20"
+                    />
+                    <text class="llavero__texto" y="152" fill="#000">
+                      RASHO
+                    </text>
+                    <text class="llavero__texto" y="150" fill="#f4f4f2">
+                      RASHO
+                    </text>
+                    <text class="llavero__sub" y="174" fill="#ff5a1f">
+                      PRINTS
+                    </text>
+                    <circle class="llavero__clavo" cy="8" r="6" />
+                  </g>
+                </g>
+
+                <!-- Llavero blanco -->
+                <g
+                  class="llavero"
+                  style="
+                    transform-origin: 405px 120px;
+                    animation-duration: 5s;
+                    animation-delay: -2.4s;
+                  "
+                >
+                  <g transform="translate(405 112) rotate(4)">
+                    <circle class="llavero__aro" cy="24" r="20" />
+                    <use href="#llForma" y="8" fill="#c9c9c3" />
+                    <use href="#llForma" fill="#f7f7f5" />
+                    <use href="#llForma" fill="url(#llCapas)" />
+                    <circle cy="82" r="6.5" class="llavero__agujero" />
+                    <ellipse
+                      class="llavero__aro llavero__aro--chico"
+                      cy="60"
+                      rx="7"
+                      ry="20"
+                    />
+                    <text class="llavero__texto" y="152" fill="rgba(0,0,0,.18)">
+                      RASHO
+                    </text>
+                    <text class="llavero__texto" y="150" fill="#ff5a1f">
+                      RASHO
+                    </text>
+                    <text class="llavero__sub" y="174" fill="#3d3d3d">
+                      PRINTS
+                    </text>
+                    <circle class="llavero__clavo" cy="8" r="6" />
+                  </g>
+                </g>
+
+                <!-- Llavero azul -->
+                <g
+                  class="llavero"
+                  style="
+                    transform-origin: 250px 310px;
+                    animation-duration: 3.6s;
+                    animation-delay: -0.6s;
+                  "
+                >
+                  <g transform="translate(250 302) rotate(-2)">
+                    <circle class="llavero__aro" cy="24" r="20" />
+                    <use href="#llForma" y="8" fill="#1d3f66" />
+                    <use href="#llForma" fill="#2c5d93" />
+                    <use href="#llForma" fill="url(#llCapas)" />
+                    <circle cy="82" r="6.5" class="llavero__agujero" />
+                    <ellipse
+                      class="llavero__aro llavero__aro--chico"
+                      cy="60"
+                      rx="7"
+                      ry="20"
+                    />
+                    <text class="llavero__texto" y="152" fill="#1d3f66">
+                      RASHO
+                    </text>
+                    <text class="llavero__texto" y="150" fill="#ffffff">
+                      RASHO
+                    </text>
+                    <text class="llavero__sub" y="174" fill="#bcd0e6">
+                      PRINTS
+                    </text>
+                    <circle class="llavero__clavo" cy="8" r="6" />
+                  </g>
+                </g>
+              </svg>
+              <figcaption class="mono">Imagen ilustrativa</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="llaveros__subtitulo">
+            ¿Para qué le sirve un llavero a tu marca?
+          </h3>
+          <ol class="beneficios">
+            <li class="beneficio">
+              <span class="mono">01</span>
+              <h4>Se usa todos los días</h4>
+              <p>
+                Tu cliente lo lleva cada vez que sale de su casa. Tu logo queda a la
+                vista en la mochila o sobre la mesa, sin pagar anuncios.
+              </p>
+            </li>
+            <li class="beneficio">
+              <span class="mono">02</span>
+              <h4>Cuesta poco y dura</h4>
+              <p>
+                Sale poco producirlo y la gente lo guarda y lo usa. Dura mucho más
+                que un folleto o una tarjeta.
+              </p>
+            </li>
+            <li class="beneficio">
+              <span class="mono">03</span>
+              <h4>Un regalo con la compra</h4>
+              <p>
+                Sumalo a cada compra, al packaging o como regalo de bienvenida. Es un
+                detalle que la gente recuerda cuando vuelve a comprar.
+              </p>
+            </li>
+            <li class="beneficio">
+              <span class="mono">04</span>
+              <h4>Con tu logo y tus colores</h4>
+              <p>
+                Elegís la forma y el material, PLA o PETG. Te ayudamos con el diseño
+                para que se vea bien y dure.
+              </p>
+            </li>
+          </ol>
+
+          <div class="llaveros__banda">
+            <p>
+              <strong>¿Tenés una marca o un emprendimiento?</strong> Te hacemos los llaveros.
+            </p>
+            <a
+              class="boton"
+              href="https://wa.me/5491164254177"
+              data-wa-mensaje="Hola Rasho Prints! Tengo una marca / emprendimiento y quiero hacer llaveros personalizados. Les cuento mi idea:"
+              target="_blank"
+              rel="noopener"
+              >Contanos tu idea por WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie__escena" id="pieEscena">
+        <div class="pie__fijo">
+          <div class="contenedor pie__cta">
+            <div class="pie__texto">
+              <p class="seccion__numero mono">Hablemos</p>
+              <h2 id="pie-titulo">
+                Dejanos tu correo.
+                <em class="resalte">Te escribimos nosotros.</em>
+              </h2>
+              <p class="pie__bajada">
+                Contanos qué querés imprimir y te respondemos por correo. Si
+                todavía no lo tenés claro, lo vemos juntos.
+              </p>
+            </div>
+
+            <form
+              class="formulario pie__form"
+              id="formContacto"
+              aria-labelledby="pie-titulo"
+              novalidate
+            >
+              <div class="pie__campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoCorreo"
+                    >Tu correo</label
+                  >
+                  <input
+                    type="email"
+                    id="contactoCorreo"
+                    name="correo"
+                    autocomplete="email"
+                    inputmode="email"
+                    maxlength="120"
+                    placeholder="nombre@correo.com"
+                    aria-describedby="contacto-error"
+                    required
+                  />
+                  <p class="campo__error" id="contacto-error" role="alert"></p>
+                </div>
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoMensaje"
+                    >Qué querés imprimir
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <textarea
+                    id="contactoMensaje"
+                    name="mensaje"
+                    rows="2"
+                    maxlength="600"
+                    placeholder="Ej: 50 llaveros con mi logo"
+                  ></textarea>
+                </div>
+                <div class="pie__trampa" aria-hidden="true">
+                  <label for="contactoEmpresa">Empresa</label>
+                  <input
+                    type="text"
+                    id="contactoEmpresa"
+                    name="empresa"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="boton boton--lleno boton--ancho"
+                  id="contactoEnviar"
+                >
+                  Quiero que me escriban
+                </button>
+                <p class="pie__privacidad">
+                  Usamos tu correo solo para responderte.
+                </p>
+                <p class="pie__fallo" id="contactoFallo" role="alert" hidden>
+                  No pudimos enviarlo. Probá de nuevo o
+                  <a
+                    href="https://wa.me/5491164254177"
+                    data-link="whatsapp"
+                    target="_blank"
+                    rel="noopener"
+                    >escribinos por WhatsApp</a
+                  >.
+                </p>
+              </div>
+              <div class="pie__ok" id="contactoOk" tabindex="-1" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12.5l4.5 4.5L19 7.5" />
+                </svg>
+                <h3>Recibimos tu correo</h3>
+                <p>
+                  Te vamos a escribir a
+                  <strong id="contactoDestino"></strong>.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="contenedor pie__marca" id="pieMarca" aria-hidden="true">
+            <svg
+              class="pie__impresion pie__impresion--ancha"
+              viewBox="0 0 1200 270"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="252"
+              data-alto="224"
+              data-ancho="1200"
+            >
+              <defs>
+                <linearGradient id="pieColorA" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasA" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteA">
+                  <rect class="pie__corte" width="1200" y="28" height="224" />
+                </clipPath>
+              </defs>
+              <text class="pie__letras pie__letras--base" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs">RASHO</text>
+              <g clip-path="url(#pieCorteA)">
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieColorA)">RASHO</text>
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieCapasA)">RASHO</text>
+              </g>
+              <rect class="pie__nivel" width="1200" height="2" y="28" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <svg
+              class="pie__impresion pie__impresion--alta"
+              viewBox="0 0 600 410"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="396"
+              data-alto="376"
+              data-ancho="600"
+            >
+              <defs>
+                <linearGradient id="pieColorB" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasB" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteB">
+                  <rect class="pie__corte" width="600" y="20" height="376" />
+                </clipPath>
+              </defs>
+              <g class="pie__letras pie__letras--base" font-size="240">
+                <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+              </g>
+              <g clip-path="url(#pieCorteB)">
+                <g class="pie__letras" font-size="240" fill="url(#pieColorB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+                <g class="pie__letras" font-size="240" fill="url(#pieCapasB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+              </g>
+              <rect class="pie__nivel" width="600" height="2" y="20" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <p class="pie__lectura mono" id="pieLectura">Pieza lista</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie__base">
+        <div class="contenedor">
+          <div class="pie__grilla">
+            <div class="pie__marca-texto">
+              <a
+                href="index.html"
+                class="logo logo--claro"
+                aria-label="Rasho Prints, volver al inicio"
+              >
+                <span class="logo__marca" aria-hidden="true"
+                  ><i></i><i></i><i></i
+                ></span>
+                RASHO<span class="logo__fino">PRINTS</span>
+              </a>
+              <p>
+                Impresión 3D en Buenos Aires. Retiro en Núñez o envío por
+                motomensajería.
+              </p>
+            </div>
+            <nav aria-label="Secciones del sitio" class="pie__columna">
+              <p class="pie__titulo">Secciones</p>
+              <a href="servicios.html">Servicios</a>
+              <a href="servicios.html#llaveros">Llaveros personalizados</a>
+              <a href="como-funciona.html">Cómo funciona</a>
+              <a href="como-funciona.html#nosotros">Nosotros</a>
+              <a href="impresion-personalizada.html">Impresión personalizada</a>
+              <a href="impresion-personalizada.html#materiales">Materiales</a>
+              <a href="index.html#preguntas">Preguntas frecuentes</a>
+            </nav>
+            <div class="pie__columna">
+              <p class="pie__titulo">Contacto</p>
+              <a
+                href="https://wa.me/5491164254177"
+                data-link="whatsapp"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp
+                <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a
+              >
+              <a
+                href="mailto:rashoprints@gmail.com"
+                data-link="email"
+                data-text="email"
+                >rashoprints@gmail.com</a
+              >
+              <a
+                href="https://www.instagram.com/rashoprints/"
+                data-link="instagram"
+                target="_blank"
+                rel="noopener"
+                >Instagram @<span data-text="instagramUsuario"
+                  >rashoprints</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="pie__legal mono">
+            <p>
+              © <span id="anio">2026</span> Rasho Prints. Todos los derechos
+              reservados.
+            </p>
+            <a href="#principal">Volver arriba ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

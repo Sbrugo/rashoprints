@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cómo funciona | Rasho Prints</title>
+    <meta name="description" content="Cómo pedir una impresión 3D en cuatro pasos y quiénes somos en Rasho Prints." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="https://www.rashoprints.com/como-funciona" />
+    <link rel="icon" href="img/sitio/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/sitio/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Rasho Prints" />
+    <meta property="og:title" content="Cómo funciona | Rasho Prints" />
+    <meta property="og:description" content="Cómo pedir una impresión 3D en cuatro pasos y quiénes somos en Rasho Prints." />
+    <meta property="og:url" content="https://www.rashoprints.com/como-funciona" />
+    <meta property="og:image" content="https://www.rashoprints.com/img/sitio/compartir.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="saltar" href="#principal">Saltar al contenido</a>
+
+    <!-- La barra y el pie se repiten en las 4 páginas: si cambiás uno, cambiá todos -->
+    <header class="barra" id="barra">
+      <div class="contenedor barra__fila">
+        <a href="index.html" class="logo" aria-label="Rasho Prints, ir al inicio">
+          <span class="logo__marca" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+          RASHO<span class="logo__fino">PRINTS</span>
+        </a>
+
+        <nav class="menu" id="menu" aria-label="Principal">
+          <a href="servicios.html">Servicios</a>
+          <a href="como-funciona.html" class="activo" aria-current="page">Cómo funciona</a>
+          <a href="impresion-personalizada.html">Impresión personalizada</a>
+          <a href="index.html#preguntas">Preguntas frecuentes</a>
+          <a href="index.html#contacto" class="menu__solo-movil">Contacto</a>
+        </nav>
+
+        <div class="barra__acciones">
+          <button
+            class="boton-icono menu-boton"
+            id="botonMenu"
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="progreso" id="progreso" aria-hidden="true"></div>
+    </header>
+
+    <main id="principal">
+      <section
+        class="seccion seccion--clara"
+        id="como-comprar"
+        aria-labelledby="como-titulo"
+      >
+        <div class="contenedor">
+          <div class="seccion__cabecera">
+            <p class="seccion__numero mono">Cómo funciona</p>
+            <h1 id="como-titulo">
+              Se pide en <em class="resalte">cuatro pasos.</em>
+            </h1>
+          </div>
+          <ol class="pasos">
+            <li class="paso">
+              <span class="paso__num mono">01</span>
+              <h3>Mostranos tu idea</h3>
+              <p>
+                Subí una imagen, foto o boceto, o tu archivo 3D si ya lo tenés.
+              </p>
+            </li>
+            <li class="paso">
+              <span class="paso__num mono">02</span>
+              <h3>Completá los detalles</h3>
+              <p>Contanos medidas, cantidad, material y color.</p>
+            </li>
+            <li class="paso">
+              <span class="paso__num mono">03</span>
+              <h3>Envialo por WhatsApp</h3>
+              <p>
+                Se abre un chat con tu pedido ya escrito y el link de tu
+                archivo. Solo tenés que enviarlo.
+              </p>
+            </li>
+            <li class="paso">
+              <span class="paso__num mono">04</span>
+              <h3>Cotizamos y coordinamos</h3>
+              <p>
+                Te respondemos con la cotización, la forma de pago y la entrega.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="seccion seccion--gris"
+        id="nosotros"
+        aria-labelledby="nosotros-titulo"
+      >
+        <div class="contenedor nosotros">
+          <!-- ANIMACIÓN: de la idea al producto impreso en 3D (la controla js/app.js) -->
+          <figure
+            class="nosotros__imagen animacion-idea"
+            id="animacionIdea"
+            data-fase="listo"
+          >
+            <svg
+              viewBox="0 0 600 600"
+              role="img"
+              aria-label="Animación: una idea se convierte en un diseño, se imprime en 3D capa por capa y queda el producto terminado"
+            >
+              <defs>
+                <pattern
+                  id="aniPuntos"
+                  width="24"
+                  height="24"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <circle class="ani__puntos" cx="2" cy="2" r="1.2" />
+                </pattern>
+                <pattern
+                  id="aniCapas"
+                  width="10"
+                  height="6"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect class="ani__capas-base" width="10" height="6" />
+                  <rect class="ani__capas-linea" y="5" width="10" height="1" />
+                </pattern>
+                <linearGradient id="aniVolumen" x1="0" x2="1">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".35" />
+                  <stop offset=".45" stop-color="#fff" stop-opacity="0" />
+                  <stop offset="1" stop-color="#000" stop-opacity=".22" />
+                </linearGradient>
+                <clipPath id="aniForma">
+                  <path
+                    d="M240 470C215 430 215 400 225 370C240 330 268 310 268 285L262 250H338L332 285C332 310 360 330 375 370C385 400 385 430 360 470Z"
+                  />
+                </clipPath>
+              </defs>
+
+              <rect class="ani__fondo" width="600" height="600" />
+              <rect width="600" height="600" fill="url(#aniPuntos)" />
+
+              <!-- 1. Idea -->
+              <g class="ani__idea">
+                <circle class="ani__halo" cx="300" cy="235" r="95" />
+                <g class="ani__rayos ani__trazo ani__acento">
+                  <path
+                    d="M300 120v-22M300 350v22M185 235h-22M415 235h22M219 154l-15-15M381 154l15-15M219 316l-15 15M381 316l15 15"
+                  />
+                </g>
+                <circle
+                  class="ani__trazo ani__vidrio"
+                  cx="300"
+                  cy="230"
+                  r="58"
+                />
+                <path
+                  class="ani__trazo ani__acento ani__filamento"
+                  d="M282 255l10-28 8 22 8-22 10 28"
+                />
+                <path class="ani__trazo" d="M280 282v24h40v-24M284 294h32" />
+                <path class="ani__trazo" d="M290 306v10h20v-10" />
+              </g>
+
+              <!-- 2. Diseño -->
+              <g class="ani__cotas">
+                <path
+                  class="ani__trazo ani__cota"
+                  d="M300 232V478M412 250V470M404 250h16M404 470h16M262 228h76M262 220v16M338 220v16"
+                />
+              </g>
+              <g class="ani__boceto">
+                <path
+                  class="ani__trazo"
+                  pathLength="1"
+                  d="M240 470C215 430 215 400 225 370C240 330 268 310 268 285L262 250H338L332 285C332 310 360 330 375 370C385 400 385 430 360 470Z"
+                />
+              </g>
+
+              <!-- 3. Impresora -->
+              <g class="ani__impresora">
+                <rect
+                  class="ani__estructura"
+                  x="122"
+                  y="100"
+                  width="12"
+                  height="390"
+                  rx="2"
+                />
+                <rect
+                  class="ani__estructura"
+                  x="466"
+                  y="100"
+                  width="12"
+                  height="390"
+                  rx="2"
+                />
+                <rect
+                  class="ani__estructura"
+                  x="122"
+                  y="100"
+                  width="356"
+                  height="12"
+                  rx="2"
+                />
+                <rect
+                  class="ani__cama"
+                  x="150"
+                  y="470"
+                  width="300"
+                  height="14"
+                  rx="2"
+                />
+                <rect
+                  class="ani__estructura"
+                  x="104"
+                  y="484"
+                  width="392"
+                  height="26"
+                  rx="4"
+                />
+                <rect
+                  class="ani__pantalla"
+                  x="124"
+                  y="491"
+                  width="44"
+                  height="12"
+                  rx="2"
+                />
+                <g id="aniRiel" transform="translate(0 150)">
+                  <rect
+                    class="ani__riel"
+                    x="134"
+                    y="-42"
+                    width="332"
+                    height="8"
+                    rx="2"
+                  />
+                </g>
+              </g>
+
+              <!-- 4. Pieza impresa (se revela capa por capa) -->
+              <g class="ani__pieza">
+                <g clip-path="url(#aniForma)">
+                  <rect
+                    id="aniRelleno"
+                    x="200"
+                    y="248"
+                    width="200"
+                    height="222"
+                    fill="url(#aniCapas)"
+                  />
+                  <rect
+                    id="aniRellenoVol"
+                    x="200"
+                    y="248"
+                    width="200"
+                    height="222"
+                    fill="url(#aniVolumen)"
+                  />
+                  <rect
+                    id="aniCapa"
+                    class="ani__capa"
+                    x="200"
+                    y="242"
+                    width="200"
+                    height="6"
+                  />
+                </g>
+              </g>
+
+              <g class="ani__impresora">
+                <g id="aniCabezal" transform="translate(180 150)">
+                  <rect
+                    class="ani__bloque"
+                    x="-18"
+                    y="-34"
+                    width="36"
+                    height="24"
+                    rx="3"
+                  />
+                  <circle class="ani__ventilador" cx="0" cy="-22" r="6" />
+                  <path class="ani__boquilla" d="M-7 -10H7L2 0H-2Z" />
+                  <circle class="ani__punta" cx="0" cy="1" r="3" />
+                </g>
+              </g>
+
+              <g class="ani__brillos">
+                <path d="M398 262l5 13 13 5-13 5-5 13-5-13-13-5 13-5z" />
+                <path d="M196 318l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" />
+                <path d="M392 392l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" />
+              </g>
+            </svg>
+            <ol class="ani-pasos" aria-hidden="true">
+              <li data-paso="idea"><span class="mono">01</span> Idea</li>
+              <li data-paso="diseno"><span class="mono">02</span> Diseño</li>
+              <li data-paso="impresion">
+                <span class="mono">03</span> Impresión 3D
+              </li>
+              <li data-paso="listo"><span class="mono">04</span> Producto</li>
+            </ol>
+          </figure>
+          <div class="nosotros__texto">
+            <p class="seccion__numero mono">Quiénes somos</p>
+            <h2 id="nosotros-titulo">
+              Estudiamos diseño <em class="resalte">e imprimimos en 3D.</em>
+            </h2>
+            <p>
+              Somos estudiantes de Diseño Industrial de la Universidad de
+              Palermo. Trabajamos con PyMEs, empresas y otros estudiantes en
+              piezas a medida.
+            </p>
+            <p>
+              Hacemos prototipos, modelos conceptuales, piezas funcionales y
+              productos personalizados. Te acompañamos en todo el proceso y
+              aportamos lo que sabemos de diseño.
+            </p>
+            <p>
+              Queremos que mandar a hacer una pieza a medida sea accesible, y
+              adaptamos cada trabajo a lo que necesitás.
+            </p>
+
+            <!-- TRAYECTORIA: completá estos datos reales (o borrá este bloque si preferís no mostrarlos) -->
+            <dl class="trayectoria">
+              <div>
+                <dt>Desde</dt>
+                <dd>2024</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie__escena" id="pieEscena">
+        <div class="pie__fijo">
+          <div class="contenedor pie__cta">
+            <div class="pie__texto">
+              <p class="seccion__numero mono">Hablemos</p>
+              <h2 id="pie-titulo">
+                Dejanos tu correo.
+                <em class="resalte">Te escribimos nosotros.</em>
+              </h2>
+              <p class="pie__bajada">
+                Contanos qué querés imprimir y te respondemos por correo. Si
+                todavía no lo tenés claro, lo vemos juntos.
+              </p>
+            </div>
+
+            <form
+              class="formulario pie__form"
+              id="formContacto"
+              aria-labelledby="pie-titulo"
+              novalidate
+            >
+              <div class="pie__campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoCorreo"
+                    >Tu correo</label
+                  >
+                  <input
+                    type="email"
+                    id="contactoCorreo"
+                    name="correo"
+                    autocomplete="email"
+                    inputmode="email"
+                    maxlength="120"
+                    placeholder="nombre@correo.com"
+                    aria-describedby="contacto-error"
+                    required
+                  />
+                  <p class="campo__error" id="contacto-error" role="alert"></p>
+                </div>
+                <div class="campo">
+                  <label class="campo__etiqueta" for="contactoMensaje"
+                    >Qué querés imprimir
+                    <span class="opcional">(opcional)</span></label
+                  >
+                  <textarea
+                    id="contactoMensaje"
+                    name="mensaje"
+                    rows="2"
+                    maxlength="600"
+                    placeholder="Ej: 50 llaveros con mi logo"
+                  ></textarea>
+                </div>
+                <div class="pie__trampa" aria-hidden="true">
+                  <label for="contactoEmpresa">Empresa</label>
+                  <input
+                    type="text"
+                    id="contactoEmpresa"
+                    name="empresa"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="boton boton--lleno boton--ancho"
+                  id="contactoEnviar"
+                >
+                  Quiero que me escriban
+                </button>
+                <p class="pie__privacidad">
+                  Usamos tu correo solo para responderte.
+                </p>
+                <p class="pie__fallo" id="contactoFallo" role="alert" hidden>
+                  No pudimos enviarlo. Probá de nuevo o
+                  <a
+                    href="https://wa.me/5491164254177"
+                    data-link="whatsapp"
+                    target="_blank"
+                    rel="noopener"
+                    >escribinos por WhatsApp</a
+                  >.
+                </p>
+              </div>
+              <div class="pie__ok" id="contactoOk" tabindex="-1" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12.5l4.5 4.5L19 7.5" />
+                </svg>
+                <h3>Recibimos tu correo</h3>
+                <p>
+                  Te vamos a escribir a
+                  <strong id="contactoDestino"></strong>.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="contenedor pie__marca" id="pieMarca" aria-hidden="true">
+            <svg
+              class="pie__impresion pie__impresion--ancha"
+              viewBox="0 0 1200 270"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="252"
+              data-alto="224"
+              data-ancho="1200"
+            >
+              <defs>
+                <linearGradient id="pieColorA" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasA" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteA">
+                  <rect class="pie__corte" width="1200" y="28" height="224" />
+                </clipPath>
+              </defs>
+              <text class="pie__letras pie__letras--base" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs">RASHO</text>
+              <g clip-path="url(#pieCorteA)">
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieColorA)">RASHO</text>
+                <text class="pie__letras" x="600" y="252" font-size="304" textLength="1184" lengthAdjust="spacingAndGlyphs" fill="url(#pieCapasA)">RASHO</text>
+              </g>
+              <rect class="pie__nivel" width="1200" height="2" y="28" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <svg
+              class="pie__impresion pie__impresion--alta"
+              viewBox="0 0 600 410"
+              preserveAspectRatio="xMidYMax meet"
+              data-base="396"
+              data-alto="376"
+              data-ancho="600"
+            >
+              <defs>
+                <linearGradient id="pieColorB" x1="0" x2="1">
+                  <stop offset=".1" stop-color="#ff5a1f" />
+                  <stop offset=".9" stop-color="#ffb37a" />
+                </linearGradient>
+                <pattern id="pieCapasB" width="12" height="6" patternUnits="userSpaceOnUse">
+                  <rect y="4.8" width="12" height="1.2" fill="rgba(10,10,11,.28)" />
+                </pattern>
+                <clipPath id="pieCorteB">
+                  <rect class="pie__corte" width="600" y="20" height="376" />
+                </clipPath>
+              </defs>
+              <g class="pie__letras pie__letras--base" font-size="240">
+                <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+              </g>
+              <g clip-path="url(#pieCorteB)">
+                <g class="pie__letras" font-size="240" fill="url(#pieColorB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+                <g class="pie__letras" font-size="240" fill="url(#pieCapasB)">
+                  <text x="300" y="194" textLength="584" lengthAdjust="spacingAndGlyphs">RASHO</text>
+                  <text x="300" y="396" textLength="584" lengthAdjust="spacingAndGlyphs">PRINTS</text>
+                </g>
+              </g>
+              <rect class="pie__nivel" width="600" height="2" y="20" />
+              <g class="pie__cabezal">
+                <path class="pie__cabezal-cuerpo" d="M-20 -46h40v22h-40z" />
+                <path class="pie__cabezal-punta" d="M-9 -24H9L2 -8h-4z" />
+                <circle class="pie__cabezal-luz" cy="-5" r="3" />
+              </g>
+            </svg>
+            <p class="pie__lectura mono" id="pieLectura">Pieza lista</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie__base">
+        <div class="contenedor">
+          <div class="pie__grilla">
+            <div class="pie__marca-texto">
+              <a
+                href="index.html"
+                class="logo logo--claro"
+                aria-label="Rasho Prints, volver al inicio"
+              >
+                <span class="logo__marca" aria-hidden="true"
+                  ><i></i><i></i><i></i
+                ></span>
+                RASHO<span class="logo__fino">PRINTS</span>
+              </a>
+              <p>
+                Impresión 3D en Buenos Aires. Retiro en Núñez o envío por
+                motomensajería.
+              </p>
+            </div>
+            <nav aria-label="Secciones del sitio" class="pie__columna">
+              <p class="pie__titulo">Secciones</p>
+              <a href="servicios.html">Servicios</a>
+              <a href="servicios.html#llaveros">Llaveros personalizados</a>
+              <a href="como-funciona.html">Cómo funciona</a>
+              <a href="como-funciona.html#nosotros">Nosotros</a>
+              <a href="impresion-personalizada.html">Impresión personalizada</a>
+              <a href="impresion-personalizada.html#materiales">Materiales</a>
+              <a href="index.html#preguntas">Preguntas frecuentes</a>
+            </nav>
+            <div class="pie__columna">
+              <p class="pie__titulo">Contacto</p>
+              <a
+                href="https://wa.me/5491164254177"
+                data-link="whatsapp"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp
+                <span data-text="whatsappVisible">+54 9 11 6425-4177</span></a
+              >
+              <a
+                href="mailto:rashoprints@gmail.com"
+                data-link="email"
+                data-text="email"
+                >rashoprints@gmail.com</a
+              >
+              <a
+                href="https://www.instagram.com/rashoprints/"
+                data-link="instagram"
+                target="_blank"
+                rel="noopener"
+                >Instagram @<span data-text="instagramUsuario"
+                  >rashoprints</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="pie__legal mono">
+            <p>
+              © <span id="anio">2026</span> Rasho Prints. Todos los derechos
+              reservados.
+            </p>
+            <a href="#principal">Volver arriba ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

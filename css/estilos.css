@@ -306,7 +306,7 @@ section[id], [id="principal"] { scroll-margin-top: var(--barra-alto); }
 .seccion__cabecera { max-width: 720px; margin-bottom: 56px; }
 .seccion__numero { color: var(--tenue); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
 .seccion__numero::before { content: ""; width: 24px; height: 2px; border-radius: 2px; background: var(--acento); }
-.seccion h2 { font-size: clamp(34px, 4.6vw, 56px); }
+.seccion h1, .seccion h2 { font-size: clamp(34px, 4.6vw, 56px); }
 .seccion__bajada { margin-top: 18px; font-size: 17px; color: var(--tinta-2); max-width: 560px; }
 .seccion--oscura .seccion__numero, .seccion--oscura .seccion__bajada { color: #a9a9a4; }
 @media (max-width: 640px) { .seccion { padding: 72px 0; } .seccion__cabecera { margin-bottom: 36px; } }
@@ -388,7 +388,7 @@ section[id], [id="principal"] { scroll-margin-top: var(--barra-alto); }
 
 /* ---------- STL ---------- */
 .stl { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: start; }
-.stl__intro h2 { color: #fff; }
+.stl__intro h1, .stl__intro h2 { color: #fff; }
 .stl__lista { margin: 40px 0 0; padding: 0; list-style: none; display: grid; gap: 14px; }
 .stl__lista li { display: flex; gap: 12px; color: #d6d6d2; font-size: 15px; }
 .stl__lista li::before { content: ""; flex: none; width: 14px; height: 1px; margin-top: 12px; background: var(--acento); }
@@ -834,4 +834,49 @@ body::after {
   }
   .pie__marca { flex: 0 1 auto; }
   .pie__impresion--ancha { height: clamp(130px, min(29vh, 100vh - 530px), 285px); }
+}
+
+/* ---------- PORTADA: RESÚMENES RÁPIDOS ---------- */
+.seccion--rapida { padding: 72px 0; }
+.rapido { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 56px; align-items: start; }
+.rapido .seccion__cabecera { margin-bottom: 0; }
+.rapido__contenido { display: grid; gap: 24px; justify-items: start; }
+.rapido__lista { width: 100%; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--linea-fuerte); }
+.rapido__lista li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 14px 0; border-bottom: 1px solid var(--linea-fuerte); }
+.rapido__lista strong { font-size: 18px; font-weight: 600; }
+.rapido__lista li > span:not(.mono) { margin-left: auto; font-size: 15px; color: var(--tinta-2); }
+@media (max-width: 760px) {
+  .seccion--rapida { padding: 52px 0; }
+  .rapido { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .rapido__lista li > span:not(.mono) { flex-basis: 100%; margin-left: 0; }
+  .rapido__contenido .boton { width: 100%; }
+}
+
+/* ---------- TARJETAS DE SERVICIOS ---------- */
+.servicios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.servicio {
+  position: relative; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; padding: 12px 12px 22px;
+  background: var(--oscuro-2); border: 1px solid var(--linea); border-radius: var(--radio);
+  transition: border-color var(--rapido);
+}
+.servicio:hover, .servicio:focus-within { border-color: rgba(255, 90, 31, .55); }
+.servicio__foto {
+  position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10; margin-bottom: 10px; overflow: hidden;
+  border: 1px dashed #55555c; border-radius: 8px;
+  background: radial-gradient(circle, rgba(255, 255, 255, .08) 1px, transparent 1.4px) 0 0 / 18px 18px, #0d0d0f;
+}
+.servicio__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.servicio__pendiente { color: #a9a9a4; }
+.servicio h2, .servicio p, .servicio__enlace { margin-inline: 10px; }
+.seccion .servicio h2 { font-size: 23px; color: #fff; }
+.servicio p { font-size: 15px; color: #a9a9a4; }
+.servicio__enlace { margin-top: 8px; font-size: 15px; font-weight: 600; color: var(--acento-claro); text-underline-offset: 3px; }
+.servicio__enlace::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+@media (max-width: 820px) {
+  .servicios {
+    display: flex; gap: 12px; margin-inline: -16px; padding: 0 16px 8px; overflow-x: auto;
+    scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: none;
+  }
+  .servicios::-webkit-scrollbar { display: none; }
+  .servicio { flex: 0 0 min(82%, 320px); scroll-snap-align: start; }
 }

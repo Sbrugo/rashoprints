@@ -112,7 +112,7 @@
 
   // Luz que sigue al cursor sobre las tarjetas
   function activarFocos() {
-    $$('.material, .beneficio').forEach(function (el) { el.classList.add('foco'); });
+    $$('.material, .beneficio, .servicio').forEach(function (el) { el.classList.add('foco'); });
     document.addEventListener('pointermove', function (e) {
       var el = e.target.closest && e.target.closest('.foco');
       if (!el) return;
@@ -151,7 +151,7 @@
       el.classList.add('revelar');
     });
     // Grillas: cada elemento aparece con un pequeño retraso respecto del anterior
-    $$('.pasos, .materiales, .contactos, .faq__lista, .beneficios').forEach(function (grupo) {
+    $$('.pasos, .materiales, .contactos, .faq__lista, .beneficios, .servicios').forEach(function (grupo) {
       Array.prototype.forEach.call(grupo.children, function (hijo, i) {
         hijo.classList.add('revelar');
         hijo.style.setProperty('--retraso', (i % 4) * 90 + 'ms');
@@ -565,6 +565,16 @@
         }
       });
     });
+
+    // Links desde otras páginas: ?modo=stl o ?modo=idea abre el formulario en esa opción
+    var modoPedido = new URLSearchParams(location.search).get('modo');
+    if (modoPedido === 'stl' || modoPedido === 'idea') {
+      var radioPedido = $('input[name="modo"][value="' + modoPedido + '"]', form);
+      radioPedido.checked = true;
+      cambiarModo(modoPedido);
+      var campoPedido = $('.campo--subir[data-solo="' + modoPedido + '"]', form);
+      if (campoPedido) requestAnimationFrame(function () { campoPedido.scrollIntoView({ block: 'start' }); });
+    }
 
     // Imagen de la idea
     var entradaImagen = $('#archivoIdea'), zonaIdea = $('#zonaIdea');
